@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Set up the IRSVideos Youtube feed with proper url in configuration so it's pre-populated
+ */
+function feature_youtube_update_7000() {
+  // Remove any prior configuration possible from feature enabling
+  db_query('DELETE FROM feeds_source WHERE id = :id', array(':id' => 'irs_careers_youtube_playlist'));
+
+  // Insert the configuration for Youtube Feed
+  db_query('
+    INSERT INTO
+      feeds_source
+      (
+        id,
+        feed_nid,
+        config,
+        source,
+        state,
+        fetcher_result,
+        imported
+      )
+      VALUES
+      (
+        :id,
+        :feed_nid,
+        :config,
+        :source,
+        :state,
+        :fetcher_result,
+        :imported
+      )
+  ', array(
+    ':id' => 'irs_careers_youtube_playlist',
+    ':feed_nid' => 0,
+    ':config' => 'a:2:{s:19:"FeedsJSONPathParser";a:3:{s:7:"context";s:14:"$.feed.entry.*";s:5:"debug";a:1:{s:7:"options";a:24:{s:7:"context";i:0;s:17:"jsonpath_parser:0";i:0;s:17:"jsonpath_parser:4";i:0;s:17:"jsonpath_parser:5";i:0;s:17:"jsonpath_parser:7";i:0;s:18:"jsonpath_parser:26";i:0;s:17:"jsonpath_parser:8";i:0;s:17:"jsonpath_parser:9";i:0;s:18:"jsonpath_parser:10";i:0;s:18:"jsonpath_parser:11";i:0;s:18:"jsonpath_parser:12";i:0;s:18:"jsonpath_parser:13";i:0;s:18:"jsonpath_parser:14";i:0;s:18:"jsonpath_parser:15";i:0;s:18:"jsonpath_parser:16";i:0;s:18:"jsonpath_parser:17";i:0;s:18:"jsonpath_parser:18";i:0;s:18:"jsonpath_parser:19";i:0;s:18:"jsonpath_parser:20";i:0;s:18:"jsonpath_parser:21";i:0;s:18:"jsonpath_parser:22";i:0;s:18:"jsonpath_parser:23";i:0;s:18:"jsonpath_parser:24";i:0;s:18:"jsonpath_parser:25";i:0;}}s:7:"sources";a:23:{s:17:"jsonpath_parser:0";s:8:"title.$t";s:17:"jsonpath_parser:4";s:7:"gd$etag";s:17:"jsonpath_parser:5";s:5:"id.$t";s:17:"jsonpath_parser:7";s:10:"updated.$t";s:18:"jsonpath_parser:26";s:12:"published.$t";s:17:"jsonpath_parser:8";s:15:"category.1.term";s:17:"jsonpath_parser:9";s:16:"category.1.label";s:18:"jsonpath_parser:10";s:11:"link.0.href";s:18:"jsonpath_parser:11";s:11:"link.1.href";s:18:"jsonpath_parser:12";s:18:"author.0.yt$userId";s:18:"jsonpath_parser:13";s:13:"author.0.name";s:18:"jsonpath_parser:14";s:32:"media$group.media$description.$t";s:18:"jsonpath_parser:15";s:33:"media$group.media$thumbnail.0.url";s:18:"jsonpath_parser:16";s:33:"media$group.media$thumbnail.3.url";s:18:"jsonpath_parser:17";s:33:"media$group.media$thumbnail.4.url";s:18:"jsonpath_parser:18";s:33:"media$group.media$thumbnail.5.url";s:18:"jsonpath_parser:19";s:33:"media$group.media$thumbnail.1.url";s:18:"jsonpath_parser:20";s:33:"media$group.media$thumbnail.2.url";s:18:"jsonpath_parser:21";s:31:"media$group.yt$duration.seconds";s:18:"jsonpath_parser:22";s:25:"media$group.yt$videoid.$t";s:18:"jsonpath_parser:23";s:23:"yt$statistics.viewCount";s:18:"jsonpath_parser:24";s:27:"yt$statistics.favoriteCount";s:18:"jsonpath_parser:25";s:25:"media$group.yt$videoid.$t";}}s:12:"FeedsCrawler";a:3:{s:6:"source";s:71:"http://gdata.youtube.com/feeds/api/videos?author=irsvideos&v=2&alt=json";s:7:"crawler";a:6:{s:9:"num_pages";s:2:"10";s:5:"delay";s:1:"2";s:9:"first_run";s:1:"0";s:4:"auto";s:1:"0";s:5:"xpath";s:0:"";s:3:"url";a:3:{s:11:"url_pattern";s:105:"http://gdata.youtube.com/feeds/api/videos?author=irsvideos&v=2&alt=json&start-index=$index&max-results=25";s:7:"initial";s:2:"25";s:9:"increment";s:2:"25";}}s:7:"crawled";b:1;}}',
+    ':source' => 'http://gdata.youtube.com/feeds/api/videos?author=irsvideos&v=2&alt=json',
+    ':state' => 'b:0;',
+    ':fetcher_result' => 'b:0;',
+    ':imported' => 0,
+  ));
+}

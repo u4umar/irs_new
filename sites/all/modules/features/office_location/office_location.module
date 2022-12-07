@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Office Location feature.
+ */
+
+include_once 'office_location.features.inc';

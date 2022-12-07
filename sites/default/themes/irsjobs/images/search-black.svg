@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>*Icon / Chevron / Down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.5,12 L12.71,12 L12.43,11.73 C13.63,10.33 14.25,8.42 13.91,6.39 C13.44,3.61 11.12,1.39 8.32,1.05 C4.09,0.53 0.53,4.09 1.05,8.32 C1.39,11.12 3.61,13.44 6.39,13.91 C8.42,14.25 10.33,13.63 11.73,12.43 L12,12.71 L12,13.5 L16.25,17.75 C16.66,18.16 17.33,18.16 17.74,17.75 C18.15,17.34 18.15,16.67 17.74,16.26 L13.5,12 Z M7.5,12 C5.01,12 3,9.99 3,7.5 C3,5.01 5.01,3 7.5,3 C9.99,3 12,5.01 12,7.5 C12,9.99 9.99,12 7.5,12 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IRS-Student-Page---Annotations" transform="translate(-186.000000, -1629.000000)">
+            <g id="Group" transform="translate(183.000000, 1547.000000)">
+                <g id="Job-Search" transform="translate(0.000000, 79.000000)">
+                    <g id="*-/-Icon-/-Search">
+                        <g id="search">
+                            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                            <g id="✱-/-Color-/-Light-Blue" transform="translate(2.000000, 2.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                <g id="✱-/-Color-/-Dark" mask="url(#mask-2)" fill="#303030">
+                                    <g transform="translate(-5.000000, -5.000000)" id="Rectangle-13">
+                                        <rect x="0" y="0" width="30" height="30" rx="10"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

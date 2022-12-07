@@ -1,0 +1,59 @@
+// Careers Exposed Filters Block
+//
+// No styleguide reference.
+.block--views-exp-usajobs-page-1,
+.block--views-exp-usajobs-page-2,
+.block--views-exp-usajobs-page-3,
+.block--views-exp-usajobs-page-4 {
+  @include exposed-filter;
+
+  .block__content {
+    .views-exposed-widget {
+      width: 25%;
+      margin: 0;
+      padding: 0;
+
+      > label {
+        margin: 0 0 1em;
+        padding: 0;
+
+        color: $primary-black;
+        font-size: 1.8em;
+        font-family: $primary-font;
+        font-weight: $font-bold;
+        line-height: 2em;
+      }
+
+      .views-widget .form-item {
+        margin-bottom: 1em;
+
+        label {
+          font-size: 1.2em;
+          font-family: $secondary-font;
+          font-weight: normal;
+          color: $primary-black;
+        }
+      }
+    }
+
+    .views-widget-filter-field_usajobs_category_ref_tid,
+    .views-widget-filter-field_usajobs_gslevel_ref_tid {
+      .views-widget {
+        column-count: 2;
+        column-gap: 2em;
+      }
+    }
+
+    .views-widget-filter-field_usajobs_category_ref_tid {
+      width: 50%;
+    }
+  }
+
+  @include media($tablet) {
+    // Job Type
+    .views-widget-filter-field_field_usajobs_work_type_tid .form-checkboxes {
+      column-count: 2;
+      column-gap: 2em;
+    }
+  }
+}

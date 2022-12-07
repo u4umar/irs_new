@@ -1,0 +1,47 @@
+// Fonts
+
+// Montserrat
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../fonts/montserrat-regular.eot');
+  src: url('../../fonts/montserrat-regular.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/montserrat-regular.woff') format('woff'),
+  url('../../fonts/montserrat-regular.ttf') format('truetype'),
+  url('../../fonts/montserrat-regular.svg#Montserrat') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../fonts/montserrat-bold.eot');
+  src: url('../../fonts/montserrat-bold.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/montserrat-bold.woff') format('woff'),
+  url('../../fonts/montserrat-bold.ttf') format('truetype'),
+  url('../../fonts/montserrat-bold.svg#Montserrat') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Klinic Slab
+@font-face {
+  font-family: 'klinic-slab';
+  src: url('../../fonts/klinicslabbold.eot');
+  src: url('../../fonts/klinicslabbold.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/klinicslabbold.woff') format('woff'),
+  url('../../fonts/klinicslabbold.ttf') format('truetype'),
+  url('../../fonts/klinicslabbold.svg#klinic-slab') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'klinic-slab';
+  src: url('../../fonts/klinicslabbook.eot');
+  src: url('../../fonts/klinicslabbook.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/klinicslabbook.woff') format('woff'),
+  url('../../fonts/klinicslabbook.ttf') format('truetype'),
+  url('../../fonts/klinicslabbook.svg#klinic-slab') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}

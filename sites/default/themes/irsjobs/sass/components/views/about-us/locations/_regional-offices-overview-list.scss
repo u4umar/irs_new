@@ -1,0 +1,35 @@
+// Regional Offices Overview List
+.view.view-office-locations.office-locations.office-type.regional {
+  @include styled-overview-list;
+
+  // Backface View for Regional Offices
+  .view.office-locations.conditional.related-offices .item-list ul {
+    @include clearfix;
+    @include unstyled-list;
+
+    overflow: hidden;
+
+    li.related-office {
+      width: 48%;
+      margin: 0 1% 1em;
+
+      display: block;
+      float: left;
+      text-align: center;
+    }
+
+    li.related-office a {
+      display: block;
+      color: $color-white;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: 300;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        padding-left: 1em;
+      }
+    }
+  }
+}

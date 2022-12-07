@@ -1,0 +1,39 @@
+// Reference http://neat.bourbon.io/examples/ for Bourbon Neat Grids
+
+// Variables
+$section-width: 100%;
+$zone-wrapper-width: 100%;
+
+// Selectors and Structure
+
+// Override specific needs at the component level in
+// sass/components/layouts/sections/YOUR_SECTION.
+.section {
+  width: $section-width;
+}
+
+// Override specific needs at the component level in
+// sass/components/layouts/zones/YOUR_ZONE.
+.zone-wrapper {
+  width: $zone-wrapper-width;
+  padding: 1em 0;
+}
+
+// Override specific needs at the component level in
+// sass/components/layouts/zones/YOUR_ZONE.
+.zone {
+  @include outer-container;
+
+  min-height: $zone-min-height;
+}
+
+// Regions must be within a .zone element. All regions are set to a 12
+// column-span default to accomodate future feature development. Override
+// specific needs (e.g. column size) at the component level in
+// sass/components/layouts/regions/YOUR_REGION.
+.region {
+  @include span-columns(12);
+
+  padding-right: 1em;
+  padding-left: 1em;
+}

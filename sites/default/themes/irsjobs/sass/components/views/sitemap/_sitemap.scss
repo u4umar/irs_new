@@ -1,0 +1,119 @@
+// Sitemap View Page
+//
+// No styleguide reference.
+
+$gray: $color-gray-lighter;
+
+// Page Container
+.view.page.sitemap {
+  font-size: 1rem;
+}
+
+// View
+.view.sitemap {
+  .view-content table {
+    width: 100%;
+    min-height: 11em;
+
+    margin: 0 0 2em;
+    position: relative;
+
+    caption {
+      width: 2em;
+      height: 2em;
+
+      margin: 0;
+      padding: 0;
+
+      position: absolute;
+      top: 3em;
+      left: 0;
+
+      background: $gray;
+      border-radius: 2em;
+
+      color: $primary-black;
+      font-size: 2.4em;
+      font-family: $secondary-font;
+      font-weight: 500;
+      line-height: 2em;
+      text-align: center;
+
+      // Add padding to offset skipnav
+      span {
+        padding: 4em 0 0;
+      }
+    }
+
+    thead tr {
+      border-bottom: 2px solid $gray;
+
+      th {
+        width: 50%;
+
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+
+        color: $primary-black;
+        font-size: 2.4em;
+        font-family: $primary-font;
+        font-weight: 700;
+        line-height: 1.5em;
+        text-transform: capitalize;
+      }
+    }
+
+    tbody tr {
+      border: none;
+      background: none;
+
+      .views-field-title {
+        padding-left: 6em;
+        text-transform: capitalize;
+      }
+    }
+
+    tbody tr td {
+      width: 50%;
+      padding: 0.5em 0;
+
+      color: $primary-black;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: normal;
+      line-height: 1.5em;
+
+      a {
+        color: $primary-blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    .view-content .views-table {
+      margin: 0 0 6em;
+
+      caption {
+        margin: 0 0 0 1em;
+
+        // Add padding to offset skipnavs
+        span {
+          padding: 8em 0 0;
+        }
+      }
+
+      thead th.views-field-title {
+        padding: 0 0 0.5em 1em;
+      }
+
+      tbody td.views-field-title {
+        padding: 0.5em 0 0.5em 8em;
+      }
+
+      tbody td.views-field-path {
+        padding: 0.5em 2em 0.5em 0;
+      }
+    }
+  }
+}

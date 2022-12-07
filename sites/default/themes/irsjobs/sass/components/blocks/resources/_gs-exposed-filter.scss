@@ -1,0 +1,60 @@
+// Government Schedules Exposed Filters Block
+//
+// No styleguide reference.
+.block--views-exp-gs-schedules-page {
+  @include exposed-filter;
+
+  .block__content {
+    .views-exposed-widget {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      > label {
+        margin: 0 0 1em;
+        padding: 0;
+
+        color: $primary-black;
+        font-size: 1.8em;
+        font-family: $primary-font;
+        font-weight: 700;
+        line-height: 2em;
+      }
+
+      .views-widget {
+        column-count: 4;
+        column-gap: 1em;
+
+        .form-item {
+          width: 98%;
+          margin-bottom: 1em;
+          padding: 0 1%;
+          display: block;
+
+          label {
+            color: $primary-black;
+            font-size: 1.2em;
+            font-family: $secondary-font;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  @include media($tablet) {
+    .block__content .views-exposed-widget .views-widget {
+      column-count: 3;
+    }
+  }
+
+  @include media($phone) {
+    .block__title {
+      background-position: 95% center;
+    }
+
+    .block__content .views-exposed-widget .views-widget {
+      column-count: 2;
+    }
+  }
+}

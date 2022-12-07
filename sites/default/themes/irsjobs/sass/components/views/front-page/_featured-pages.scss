@@ -1,0 +1,100 @@
+// Front Page Featured Pages
+//
+// No styleguide reference.
+
+// Block Container
+.block--views-basic-pages-block-1 {
+  font-size: 1rem;
+}
+
+// View
+.view.homepage.featured-pages {
+  .view-content ul {
+    @include clearfix;
+
+    margin: 0 0 0.75em 0;
+    padding: 0;
+  }
+
+  .item-list ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .views-row {
+    width: calc(100% / 4);
+    margin: 0 1%;
+    padding: 1em 1%;
+    text-align: center;
+
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+    }
+  }
+
+  .views-row a {
+    display: block;
+    color: $primary-blue;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    font-weight: normal;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 188px;
+
+      margin-bottom: 1em;
+      display: block;
+
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      content: ">";
+      margin-left: 0.5em;
+    }
+  }
+
+  .views-row-1 a::before {
+    background-image: url(../../images/featured-pages/Training.png);
+  }
+
+  .views-row-2 a::before {
+    background-image: url(../../images/featured-pages/Life-Programs.png);
+  }
+
+  .views-row-3 a::before {
+    background-image: url(../../images/featured-pages/Leave.png);
+  }
+
+  .views-row-4 a::before {
+    background-image: url(../../images/featured-pages/SalaryAndFinancial.png);
+  }
+
+  @include media($tablet) {
+    .view-content .views-row {
+      width: 48%;
+      margin: 0 1%;
+    }
+
+    .views-row a {
+      font-size: 1.5em;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @include media($phone) {
+    .view-content .views-row {
+      width: 44%;
+      margin: 0 3%;
+    }
+  }
+}

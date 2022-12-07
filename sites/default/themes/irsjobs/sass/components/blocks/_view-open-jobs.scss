@@ -1,0 +1,92 @@
+// View Open Jobs Block
+//
+// Link to careers page.
+//
+// Markup:
+// <div class="block block--block block--block-3">
+//   <h2 class="block__title">View Open Jobs</h2>
+//   <div class="block__content">
+//     <p><a href="#">View Open Jobs</a></p>
+//   </div>
+// </div>
+//
+// Styleguide Components.Blocks.ViewOpenJobsBlock
+.block--block-3 {
+  font-size: 1rem;
+
+  width: 34%;
+  margin: 2em auto 0;
+
+  font-family: $secondary-font;
+  font-weight: $font-normal;
+  text-align: center;
+
+  overflow: auto;
+
+  .block__title {
+    @include hide-block-title;
+  }
+
+  .block__content p {
+    margin: 0;
+  }
+
+  .block__content a {
+    padding: 1em 4em;
+
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: $primary-red;
+
+    color: $color-white;
+    font-size: 1.2em;
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 3.2em;
+      height: 3.2em;
+
+      background: $color-white-dark;
+      display: block;
+      position: absolute;
+      top: 0.25em;
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      left: -1.5em;
+    }
+
+    &::after {
+      right: -1.5em;
+    }
+  }
+
+  @include media($desktop) {
+    width: 75%;
+  }
+
+  @include media($tablet) {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6em 0 0;
+
+    .block__content a {
+      font-size: 1.1em;
+    }
+  }
+}
+
+// IE8 Compatability
+.ie8 .block--block-3 .block__content a {
+  &::before,
+  &::after {
+    content: none;
+  }
+}

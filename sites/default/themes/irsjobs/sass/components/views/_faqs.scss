@@ -1,0 +1,70 @@
+// Frequently Asked Questions View Page
+//
+// No styleguide reference.
+
+// Variables
+$border-color: #979797;
+
+// Page Container
+.view.page.faqs {
+  font-size: 1rem;
+}
+
+// Frequently Asked Questions
+.view.faqs {
+  .view-content ul {
+    @include clearfix;
+    @include unstyled-list;
+
+    .views-row {
+      width: 48%;
+      margin: 0 2% 2em 0;
+      display: block;
+      float: left;
+
+      &:nth-child(2n+1) {
+        clear: left;
+      }
+
+      .title {
+        h3 {
+          margin-bottom: 0.5em;
+          color: $primary-blue;
+          font-size: 1.6em;
+          font-family: $secondary-font;
+          font-weight: 300;
+
+          a {
+            color: $primary-blue;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+              color: $primary-black;
+              border-bottom: 1px dotted $primary-black;
+            }
+          }
+        }
+      }
+
+      .summary {
+        font-size: 1.2em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        line-height: 1.5em;
+        color: $primary-black;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    padding: 4em 2em 0;
+    border-top: 2px solid $border-color;
+
+    .view-content ul li.views-row {
+      width: 100%;
+      margin: 0 0 4em;
+      float: none;
+    }
+  }
+}

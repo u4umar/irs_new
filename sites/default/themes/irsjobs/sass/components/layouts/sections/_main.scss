@@ -1,0 +1,20 @@
+// Main Section
+//
+// No styleguide reference.
+
+// Variables
+$border-color: #979797;
+
+// Selectors and Structure
+.section--main {
+  @include media($tablet) {
+    .node,
+    .block {
+      border-top: 2px solid $border-color;
+    }
+
+    .block .view {
+      border-top: 0;
+    }
+  }
+}

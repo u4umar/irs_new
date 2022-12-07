@@ -1,0 +1,43 @@
+// Import Core Settings
+@import "variables/grid-settings";
+@import "variables/breakpoints";
+
+// Import Vendor Dependencies
+@import "bourbon";
+
+$max-width: $large-screen !default;
+@import "neat";
+@import "normalize";
+
+// Abstractions (Custom Mixins)
+
+// Mixins
+//
+// Styleguide Mixins
+@import "abstractions/**/*.scss";
+
+// Variables
+
+// Colors
+//
+// Styleguide Colors
+@import "variables/colors/*.scss";
+@import "variables/typography";
+@import "variables/grid";
+@import "variables/**/*.scss";
+
+// Base Elements (System Defaults)
+@import "base/html";
+@import "base/**/*.scss";
+
+// Components (Blocks, Forms, Layout, Library, Menus, Pages, Views)
+
+// Blocks
+//
+// Styleguide Components.Blocks
+
+// Menus
+//
+// Styleguide Components.Menus
+
+@import "components/**/*.scss";

@@ -1,0 +1,375 @@
+// Main Menu
+//
+// Main dropdown navigation.
+//
+// Markup:
+// <div style="position: relative; height: 250px; background: #f6f6f4;">
+//   <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+//     <h2 class="block__title">Main Menu</h2>
+//     <ul class="menu">
+//       <li class="first expanded active-trail"><a class="active-trail">Primary 1</a>
+//         <ul class="menu">
+//           <li class="first expanded active-trail"><a class="active-trail">Secondary 1</a>
+//             <ul class="menu">
+//               <li class="first expanded active-trail"><a class="active-trail">Tertiary 1</a></li>
+//               <li class="last collapsed"><a>Tertiary 2</a></li>
+//             </ul>
+//           </li>
+//           <li class="expanded"><a>Secondary 2</a>
+//             <ul class="menu">
+//               <li class="first leaf"><a>Tertiary 1</a></li>
+//               <li class="last leaf"><a>Tertiary 2</a></li>
+//             </ul>
+//           </li>
+//           <li class="last expanded"><a>Secondary 3</a>
+//             <ul class="menu">
+//               <li class="first leaf"><a>Tertiary 1</a></li>
+//               <li class="last leaf"><a>Tertiary 2</a></li>
+//             </ul>
+//           </li>
+//         </ul>
+//       </li>
+//       <li class="expanded"><a href="/careers">Primary 2</a>
+//         <ul class="menu">
+//           <li class="first expanded"><a href="/careers">Secondary 1</a>
+//             <ul class="menu">
+//               <li class="first leaf"><a>Tertiary 1</a></li>
+//               <li class="leaf"><a>Tertiary 2</a></li>
+//               <li class="last leaf"><a>Tertiary 3</a></li>
+//             </ul>
+//           </li>
+//           <li class="expanded"><a class="menu-link--grade">Secondary 2</a>
+//             <ul class="menu">
+//               <li class="first leaf"><a>Tertiary 1</a></li>
+//               <li class="leaf"><a>Tertiary 2</a></li>
+//               <li class="last leaf"><a>Tertiary 3</a></li>
+//             </ul>
+//           </li>
+//           <li class="last expanded"><a>Secondary 3</a>
+//             <ul class="menu">
+//               <li class="first leaf"><a>Tertiary 1</a></li>
+//               <li class="leaf"><a>Tertiary 2</a></li>
+//               <li class="last leaf"><a>Tertiary 3</a></li>
+//             </ul>
+//           </li>
+//         </ul>
+//       </li>
+//     </ul>
+//   </nav>
+// </div>
+//
+// Styleguide Components.Menus.Main
+
+// Variables
+$menu-border-color: #bfbfbf;
+$menu-border-color-active: $color-blue !default;
+$section-border: 2px solid $menu-border-color;
+
+// Main dropdown menu navigation
+.block--system-main-menu {
+  @include clearfix;
+  font-size: 1rem;
+
+  float: right;
+  position: static;
+
+  line-height: 1.5em;
+
+  .block__title {
+    display: none;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu a {
+    text-decoration: none;
+  }
+
+  // Top-level Menu
+  & > .menu,
+  & > .menu > li {
+    margin: 0;
+  }
+
+  & > .menu > li {
+    display: inline-block;
+
+    & > a {
+      padding: 1.5em;
+      display: block;
+
+      font-size: 1.2em;
+      line-height: 1em;
+      font-family: $secondary-font;
+      font-weight: 500;
+
+      color: $primary-blue;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &:hover > a,
+    &:focus > a,
+    &.active-focus > a {
+      color: $color-white;
+      background: $primary-blue;
+    }
+  }
+
+  // Dropdown Menu
+  & > .menu > li > .menu {
+    @include outer-container;
+
+    // Centers dropdown relative to parent zone
+    width: 100%;
+    left: 0;
+
+    padding: 2em 0;
+    border-top: 0.5em solid $menu-border-color-active;
+    border-bottom: 0.5em solid $menu-border-color;
+
+    background: $color-white;
+    position: absolute;
+    display: none;
+    list-style: none;
+
+    font-size: 1.1em;
+    line-height: 2em;
+
+    & > li {
+      margin: 0;
+      display: block;
+    }
+
+    // Immediate Children Links
+    & > li > a {
+
+    }
+  }
+
+  & > .menu > li:nth-child(2) > .menu {
+    @include outer-container;
+
+    // Centers dropdown relative to parent zone
+    width: 25%;
+    left: auto;
+
+    padding: 2em 2em 0.5em;
+    border-top: 0.5em solid $menu-border-color-active;
+    border-bottom: 0.5em solid $menu-border-color;
+
+    background: $color-white;
+    position: absolute;
+    display: none;
+    list-style: none;
+
+    font-size: 1.1em;
+    line-height: 2em;
+
+    & > li {
+      margin: 0;
+      display: block;
+    }
+
+    // Immediate Children Links
+    & > li > a {
+
+    }
+  }
+
+
+  // Show Dropdown Menu on hover
+  & > .menu > li:hover > .menu,
+  & > .menu > li:focus > .menu,
+  & > .menu > li.active-focus > .menu {
+    display: block;
+  }
+
+  // Dropdown Sections
+  & > .menu > li > .menu > li {
+    width: 32%;
+    margin-bottom: 1em;
+    padding: 0 2% 2em;
+    border-right: $section-border;
+
+    display: list-item;
+    float: left;
+
+    &:nth-child(4n+0),
+    &:last-child {
+      border-right: none;
+    }
+
+    &:nth-child(4n+1) {
+      clear: left;
+    }
+  }
+
+  // Dropdown Sections (Find a Job Section)
+  & > .menu > li:nth-child(2) > .menu > li {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0 2em;
+    border-right: none;
+    border-bottom: $section-border;
+
+    display: list-item;
+    float: left;
+
+    &:nth-child(5n+0),
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:nth-child(5n+1) {
+      clear: left;
+    }
+  }
+
+  // Dropdown Section Headers (Secondary Links)
+  & > .menu > li > .menu > li > a {
+    margin: 0 0 0.625em;
+    display: block;
+
+    color: $primary-red;
+    font-size: 1.6em;
+    line-height: 1.25em;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+
+    &:hover,
+    &:focus,
+    &.active-focus {
+      text-decoration: underline;
+    }
+  }
+
+  // Dropdown Section Links (Tertiary Links)
+  & > .menu > li > .menu > li > .menu li {
+    margin: 0;
+
+    a {
+      color: $primary-blue;
+      font-size: 1em;
+      line-height: 2em;
+      font-family: $secondary-font;
+      font-weight: $font-normal;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus,
+      &.active-focus {
+        text-decoration: underline;
+      }
+    }
+
+    // All other menus are not displayed
+    .menu {
+      display: hidden;
+    }
+  }
+
+  // Careers Grade Section
+  //
+  // Displays the grade section tertiary links as a
+  // two-column list.
+  .menu-link--grade + ul.menu {
+    column-count: 2;
+    column-gap: 2em;
+  }
+
+  // Application Process Dropdown
+  //
+  // Displays the dropdown sections as a group of four.
+  .menu-link--application-process + ul.menu > li {
+    box-sizing: content-box;
+    width: 20%;
+
+    &::before {
+      content: " ";
+      width: 2em;
+      height: 2em;
+      margin-right: 1em;
+
+      float: left;
+      display: block;
+
+      background: #ccc;
+      border-radius: 2em;
+
+      color: $primary-black;
+      font-size: 1.8em;
+      line-height: 2em;
+      font-family: $primary-font;
+      font-weight: $font-normal;
+
+      text-align: center;
+    }
+
+    &:nth-child(1)::before {
+      content: "1";
+    }
+
+    &:nth-child(2)::before {
+      content: "2";
+    }
+
+    &:nth-child(3)::before {
+      content: "3";
+    }
+
+    &:nth-child(4)::before {
+      content: "4";
+    }
+
+    &:hover,
+    &:focus,
+    &.active-focus {
+      &::before {
+        background: $primary-blue;
+        color: $color-white;
+      }
+    }
+  }
+
+  // Resources Dropdown
+  //
+  // Only the Job Descriptions and Benefits Programs sections, the first
+  // two sections, are to be expanded. The remaining links are vertically
+  // organized.
+  .menu-link--resources + ul.menu > li:nth-child(n+3) {
+    @include clearfix;
+
+    margin: 0 1em 1em;
+    padding: 0 2% 1em;
+    border-right: none;
+    border-bottom: $section-border;
+
+    float: left;
+    clear: none;
+
+    & > a {
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+
+  // Hide in favor of mobile navigation
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+// The parent zone will be the base for positioning the dropdowns.
+// Centering the dropdown requires all elements between the zone
+// and the main menu dropdown to be set to the default positioning
+// value (static).
+.zone--branding {
+  position: relative;
+}

@@ -1,0 +1,20 @@
+// Variables
+$large-screen: 1200px !default;
+$default-screen: 1024px !default;
+$medium-screen: 720px !default;
+$small-screen: 481px !default;
+
+$jumbotron: new-breakpoint(max-width $large-screen);
+$desktop: new-breakpoint(max-width $default-screen);
+$tablet: new-breakpoint(max-width $medium-screen);
+$phone: new-breakpoint(max-width $small-screen);
+
+// Breakpoint based on social media footer content
+$footer-phone: new-breakpoint(max-width 580px);
+
+/**
+  * Developer Note:
+  *
+  * Use the @media(max-width: $breakpoint){} declaration for calling defined media queries.
+  *
+  */

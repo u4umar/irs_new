@@ -1,0 +1,106 @@
+// Front Page Random Featured Job
+//
+// No styleguide reference.
+
+// Block Container
+.block--views-usajobs-block-2 {
+  font-size: 1rem;
+}
+
+// View
+.view.USAJobs.homepage.random {
+  margin: 2em 0;
+  padding: 1em 4em;
+
+  position: relative;
+  overflow: hidden;
+  background: $primary-red;
+
+  color: $color-white;
+  font-size: 1.2em;
+  font-family: $secondary-font;
+  font-weight: $font-normal;
+  line-height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+
+  .job-info .actions {
+    padding-left: 1em;
+
+    a {
+      padding: 0 1em;
+      color: $color-white;
+      font-weight: normal;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .social-sharing {
+    position: absolute;
+    top: 30%;
+    right: 15%;
+
+    .sharethis-wrapper {
+      display: none;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 3.2em;
+    height: 3.2em;
+
+    display: block;
+    position: absolute;
+    top: 0.25em;
+    background: $color-white-dark;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    left: -1.75em;
+  }
+
+  &::after {
+    right: -1.75em;
+  }
+
+  @include media($tablet) {
+    margin: 4em 0 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    .job-info .actions {
+      margin: 1em 0 0;
+      padding: 0;
+
+      display: block;
+      text-align: center;
+    }
+
+    .social-sharing {
+      position: static;
+
+      .sharethis-wrapper {
+        padding: 1em 0;
+      }
+    }
+  }
+}
+
+// IE8 Compatability
+.ie8 .view.USAJobs.homepage.random {
+  &::before,
+  &::after {
+    content: none;
+  }
+}

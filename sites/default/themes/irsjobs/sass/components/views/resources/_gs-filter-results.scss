@@ -1,0 +1,102 @@
+// Understanding Government Schedule View
+//
+// No styleguide reference.
+
+// Page Container
+.view.page.view-gs-schedules {
+  font-size: 1rem;
+}
+
+// View
+.view.view-gs-schedules {
+  .view-list {
+    @include clearfix;
+    @include unstyled-list;
+  }
+
+  .view-list .views-row {
+    width: 48%;
+    margin: 0 2% 2em 0;
+
+    display: block;
+    float: left;
+
+    &:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+
+  .views-row .title {
+    h3 {
+      margin-bottom: 0.5em;
+
+      color: $primary-blue;
+      font-size: 1.6em;
+      font-family: $secondary-font;
+      font-weight: 300;
+    }
+
+    a {
+      color: $primary-blue;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $primary-black;
+        border-bottom: 1px dotted $primary-black;
+      }
+    }
+  }
+
+  .views-row .summary {
+    color: $primary-black;
+    font-size: 1.2em;
+    font-family: $secondary-font;
+    font-weight: normal;
+    line-height: 1.5em;
+
+    p {
+      line-height: 1.75em;
+    }
+
+    ul li {
+      margin: 0 2em 1em;
+      list-style-type: disc;
+    }
+  }
+
+  .views-row .context.edit {
+    text-align: right;
+
+    a {
+      margin: 0;
+      padding: 0.5em 1em;
+      border: 1px solid #999;
+
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      border-radius: 0.25em;
+      background: rgb(252, 255, 244);
+      background: -moz-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(252, 255, 244, 1)), color-stop(40%, rgba(223, 229, 215, 1)), color-stop(100%, rgba(179, 190, 173, 1)));
+      background: -webkit-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+      background: -o-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+      background: -ms-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+      background: linear-gradient(to bottom, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfff4', endColorstr='#b3bead', GradientType=0);
+    }
+  }
+
+  @include media($tablet) {
+    .view-list .views-row {
+      width: 100%;
+      float: none;
+
+      margin: 0;
+      padding: 2em;
+      border-top: 2px solid $border-color;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jquery-accessibleMegaMenu",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index.js",
+  "_source": "https://github.com/adobe-accessibility/Accessible-Mega-Menu/blob/726ea8eaf716757ab778d5d8fce73cbc8e889de3/js/jquery-accessibleMegaMenu.js",
+  "_target": "*",
+  "_originalSource": "https://github.com/adobe-accessibility/Accessible-Mega-Menu/blob/726ea8eaf716757ab778d5d8fce73cbc8e889de3/js/jquery-accessibleMegaMenu.js",
+  "_direct": true
+}

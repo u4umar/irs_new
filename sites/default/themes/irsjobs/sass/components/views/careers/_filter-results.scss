@@ -1,0 +1,414 @@
+// Careers Filter Results
+//
+// No styleguide reference.
+
+// Variables
+$border-color: #979797;
+
+$sharethis-mobile-height: 65px;
+$sharethis-animation-duration: 0.3s;
+$sharethis-animation-timing-fn: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// Page Container
+.view.view-usajobs.page {
+  font-size: 1rem;
+}
+
+// View
+.view.view-usajobs {
+  table {
+    border: none;
+
+    thead tr {
+      th {
+        width: 10%;
+        padding: 2em 1em;
+        border-right: 1px solid #f6f6f4;
+
+        color: $primary-black;
+        font-size: 1.1em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        text-transform: uppercase;
+
+        background-color: #eeede9;
+
+        a {
+          color: $primary-black;
+          text-decoration: none;
+
+          img {
+            display: none;
+          }
+        }
+
+        a[title*="sort"] {
+          display: block;
+          background: url(../../images/icons/toggle-unsorted.png) 99% no-repeat;
+        }
+
+        a[title*="sort"][href*="desc"] {
+          background: url(../../images/icons/toggle-expand.png) 99% no-repeat;
+        }
+
+        a[title*="sort"][href*="asc"] {
+          background: url(../../images/icons/toggle-collapse.png) 99% no-repeat;
+        }
+      }
+
+      th.active {
+        border-left: none;
+      }
+    }
+
+    tbody tr {
+      background: transparent;
+
+      td {
+        padding: 1em;
+
+        font-size: 1.2em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        vertical-align: top;
+
+        background: transparent;
+      }
+
+      td.position {
+        font-weight: $font-bold;
+      }
+
+      td.desc {
+        width: 30%;
+      }
+
+      td.active {
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    tbody tr td.actions {
+      min-width: 125px;
+      position: relative;
+      text-align: center;
+
+      a {
+        padding: 0.75em 0;
+
+        display: block;
+        overflow: hidden;
+
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        background: $primary-green;
+        border-radius: 0.25em;
+        box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      ul.action-items.no-js {
+        display: none;
+      }
+
+      ul.action-items {
+        margin: 1em 0;
+        text-align: center;
+
+        li.item {
+          @include size(20px 20px);
+
+          margin: 0;
+
+          cursor: pointer;
+          position: relative;
+          display: inline-block;
+          overflow: hidden;
+
+          line-height: 1.5em;
+          text-indent: -999em;
+
+          background-image: url(../../images/icons/careers-actions.png);
+          background-position: 0 0;
+          background-repeat: no-repeat;
+
+          &:hover,
+          &:focus {
+            background-position: 0 -30px;
+          }
+        }
+
+        li.item.contact {
+          background-position: -40px 0;
+
+          &:hover,
+          &:focus {
+            background-position: -40px -30px;
+          }
+        }
+
+        li.item.social-sharing {
+          margin: 0 0.5em;
+          background-position: -80px 0;
+
+          &:hover,
+          &:focus {
+            background-position: -80px -30px;
+          }
+        }
+      }
+
+      .sharethis {
+        width: 100%;
+        padding: 1em 5%;
+
+        position: absolute;
+        top: 7em;
+        left: 0;
+        z-index: 2;
+
+        display: none;
+        clear: both;
+
+        background: $primary-black;
+        border-radius: 0.25em;
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+
+          border: 0.5em solid transparent;
+          border-bottom: 0.5em solid $primary-black;
+
+          position: absolute;
+          top: -1em;
+          left: 45%;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .ajax-progress {
+    height: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .view-empty {
+    h2 {
+      margin: 1em 0 0.5em 0;
+
+      font-family: $primary-font;
+      font-weight: 400;
+      line-height: 1.25em;
+    }
+
+    p, ul, ol {
+      margin: 1em 0;
+
+      font-size: 1.4em;
+      font-family: $secondary-font;
+      line-height: 1.75em;
+
+      a {
+        color: $primary-blue;
+        text-decoration: none;
+        border-bottom: 1px dotted $primary-blue;
+
+        &:hover,
+        &:focus {
+          color: $primary-black;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  @include media($tablet) {
+    table thead,
+    table .views-field-body,
+    table .views-field-created,
+    table .views-field-field-usajobs-date-end-1 {
+      display: none;
+    }
+
+    table,
+    table tbody,
+    table tr,
+    table td {
+      display: block;
+    }
+
+    table tbody tr {
+      padding: 3em 2em;
+      border-top: 2px solid $border-color;
+      position: relative;
+
+      transition: margin-bottom $sharethis-animation-duration $sharethis-animation-timing-fn;
+
+      td.position,
+      td.views-field-nothing-1,
+      td.views-field-php {
+        margin: 0 0 0.5em;
+
+        color: $primary-black;
+        font-size: 1.8em;
+        font-family: $primary-font;
+        font-weight: $font-normal;
+        line-height: 1em;
+      }
+
+      td.position,
+      td.views-field-nothing-1,
+      td.views-field-php,
+      td.actions {
+        padding: 0;
+      }
+
+      td.views-field-nothing-1 div,
+      td.actions ul {
+        display: inline;
+      }
+
+      td.position {
+        font-weight: $font-bold;
+      }
+
+      td.actions {
+        margin: 2em 0 0;
+
+        position: static;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        text-align: initial;
+
+        a,
+        ul.action-items,
+        ul.action-items li.item {
+          display: inline-block;
+        }
+
+        a,
+        ul.action-items {
+          width: 50%;
+          vertical-align: middle;
+        }
+
+        ul.action-items {
+          margin: 0;
+
+          display: inline-flex;
+          justify-content: space-around;
+
+          li.item {
+            @include size(36px 36px);
+
+            margin: 0;
+            vertical-align: bottom;
+
+            background-image: url(../../images/icons/careers-actions-large.png);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+
+            &:hover,
+            &:focus {
+              background-position: 0 -40px;
+            }
+
+            &.social-sharing {
+              background-position: -40px 0;
+
+              &:hover,
+              &:focus {
+                background-position: -40px -40px;
+              }
+            }
+
+            &.contact {
+              background-position: -80px 0;
+
+              &:hover,
+              &:focus {
+                background-position: -80px -40px;
+              }
+            }
+          }
+        }
+
+        a {
+          border-radius: 0.75em;
+          text-align: center;
+        }
+
+        .sharethis {
+          width: 100%;
+          height: $sharethis-mobile-height;
+          max-height: 0;
+          padding: 0 25%;
+
+          transition: max-height $sharethis-animation-duration $sharethis-animation-timing-fn,
+          padding-top $sharethis-animation-duration $sharethis-animation-timing-fn,
+          padding-bottom $sharethis-animation-duration $sharethis-animation-timing-fn;
+
+          display: block;
+          overflow: auto;
+
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+
+          border-radius: 0;
+          text-align: center;
+
+          &::before {
+            content: none;
+          }
+
+          .sharethis-wrapper {
+            display: flex;
+            justify-content: space-around;
+          }
+
+          .chicklets {
+            @include size(40px 40px);
+
+            margin: 0;
+            padding: 0;
+            background-image: url(../../images/icons/social-media-large.png);
+            background-repeat: no-repeat;
+
+            &.linkedin {
+              background-position: 0 0;
+            }
+
+            &.twitter {
+              background-position: -40px 0;
+            }
+
+            &.facebook {
+              background-position: -80px 0;
+            }
+          }
+        }
+      }
+
+      // Animated transition target values
+      &.sharethis-open {
+        margin-bottom: $sharethis-mobile-height;
+
+        td.actions .sharethis {
+          max-height: $sharethis-mobile-height;
+          padding-top: 1em;
+          padding-bottom: 1em;
+        }
+      }
+    }
+  }
+}

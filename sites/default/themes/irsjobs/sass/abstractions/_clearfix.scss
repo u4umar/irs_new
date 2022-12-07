@@ -1,0 +1,17 @@
+// Clearfix
+//
+// Adds an `::after` pseudoelement to clear floated child elements.
+//
+// This may already be accounted for by Bourbon's framework
+// but we wanted to show an example of how abstractions are used.
+//
+// Styleguide Mixins.Clearfix
+@mixin clearfix() {
+  &::after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+  }
+}

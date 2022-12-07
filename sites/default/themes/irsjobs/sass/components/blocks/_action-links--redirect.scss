@@ -1,0 +1,30 @@
+// Variables
+
+// Styles and Structure
+ul.action-links {
+  @include unstyled-list;
+
+  li.add_redirect {
+    display: block;
+    margin-top: 1rem;
+
+    a {
+      display: block;
+      padding: .5em 1em;
+      margin: 0;
+      font-size: 1.4rem;
+      font-family: $secondary-font;
+      font-weight: 700;
+      color: #666;
+      text-decoration: none;
+      background-color: #f1f1f1;
+      background-image: linear-gradient(to top, #f1f1f1, #f5f5f5);
+      border: 1px dashed #c6c6c6;
+
+      &::before {
+        content: "+";
+        padding-right: 1rem;
+      }
+    }
+  }
+}

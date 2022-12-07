@@ -1,0 +1,12 @@
+// User Zone
+//
+// No styleguide reference.
+.zone-wrapper--user {
+  padding: 1rem 0;
+
+  // All blocks in the user zone should be hidden on mobile devices, so
+  // no media queries are needed for the regions in this zone.
+  @include media($tablet) {
+    padding: 0;
+  }
+}

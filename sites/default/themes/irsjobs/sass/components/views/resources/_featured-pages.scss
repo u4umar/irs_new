@@ -1,0 +1,48 @@
+// Resources Overview Subpage List
+
+// Block Container
+.section--main .block--views-basic-pages-block-3 {
+  font-size: 1rem;
+  @include hide-block-border;
+}
+
+// View
+.view.resources.featured-pages {
+  @include styled-overview-list;
+
+  margin: 2em 0;
+
+  // List of subpages on card backface
+  .card .face.back .view-content ul.menu-list {
+    @include clearfix;
+
+    margin: 0 auto;
+    overflow: hidden;
+
+    li.menu {
+      width: 50%;
+      margin: 0 0 1em;
+
+      display: block;
+      float: left;
+      text-align: left;
+    }
+
+    li.menu a {
+      color: $color-white;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: 300;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        padding-left: 1em;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    margin: 0;
+  }
+}

@@ -1,0 +1,87 @@
+// Front page showcase slider, which uses flexslider
+//
+// No styleguide reference.
+
+// Block Container
+.block--views-schowcases-block-1 {
+  font-size: 1rem;
+}
+
+// View
+.view.showcase.slideshow.latest {
+  .flexslider .slides {
+    padding-bottom: 3em;
+    background-color: #ecebe8;
+    text-align: center;
+
+    .title h2 {
+      margin: 0.5em 0 0.25em 0;
+      color: $primary-black;
+      font-size: 3.2em;
+      font-family: $primary-font;
+      font-weight: $font-bold;
+    }
+
+    .tagline {
+      color: $primary-black;
+      font-size: 1.8em;
+      font-family: $primary-font;
+      font-weight: 300;
+
+      p {
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .internal-link a {
+      margin-bottom: 1em;
+      display: block;
+
+      color: $primary-blue;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  .flexslider .flex-control-nav {
+    bottom: 3em;
+  }
+
+  .flexslider .flex-control-paging {
+    li a {
+      background: #262626;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    li a.flex-active {
+      background: $primary-blue;
+    }
+  }
+
+  @include media($phone) {
+    .flexslider .slides {
+      padding: 3em 0;
+      background: none;
+    }
+    .flexslider .slides .featured-image {
+      display: none;
+    }
+
+    .flexslider .slides .title h2 {
+      font-size: 2.5em;
+    }
+
+    .flexslider .slides .tagline {
+      padding: 0 2em;
+      font-size: 1.6em;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Office Locations Static Map
+.office-locations.static-map {
+  margin-bottom: 2em;
+
+  .field-content {
+    display: block;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    border: 1px solid #4b4f56;
+  }
+
+  @include media($tablet) {
+    margin-bottom: 4em;
+  }
+}

@@ -1,0 +1,105 @@
+// Typography
+//
+// Global typography for content not belonging to a component, depends on the
+// root font-size `$em-base`.
+//
+// No styleguide reference.
+
+// Variables
+$em-base: 10px; // default is already defined in bourbon
+$base-line-height: 1.2; // 12px
+$body-line-height: 1.5;
+
+$heading-line-height: 1.5em;
+$heading-letter-spacing: -0.05em;
+
+$default-font: Helvetica, Arial, sans-serif;
+$primary-font: $default-font; //'klinic-slab', Georgia, serif;
+$secondary-font: 'Montserrat', Arial, Helvetica, sans-serif;
+$base-heading-font: Georgia, 'Times New Roman', serif;
+
+$font-normal: 400;
+$font-heavy: 600;
+$font-bold: 700;
+
+// Selectors and Structure
+html {
+  font-size: $em-base;
+  line-height: $base-line-height;
+}
+
+body {
+  font-family: $default-font;
+  line-height: $body-line-height;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-heading-font;
+  font-weight: $font-bold;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  margin: 0.5em 0;
+  font-size: 3.6em;
+  font-family: $primary-font;
+  font-weight: $font-normal;
+  line-height: 1.25em;
+}
+
+h2 {
+  margin: 0 0 0.714em; // 20px
+  font-size: 1.6em;
+}
+
+h3 {
+  margin: 0 0 0.9523em; // 20px
+  font-size: 2.1em;
+}
+
+h4 {
+  margin: 0 0 1.0526em; // 20px
+  font-size: 1.9em;
+}
+
+h5 {
+  margin: 0 0 1.1764em; // 20px
+  font-size: 1.7em;
+}
+
+h6 {
+  margin: 0 0 1.3333em; // 20px
+  font-size: 1.5em;
+}
+
+// Links
+a:link,
+a:visited {
+  color: #0062a0;
+  text-decoration: none;
+}
+
+a:link {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #202124;
+    text-decoration: underline;
+  }
+}
+
+// Horizontal Lines
+hr {
+  height: 1px;
+  background: #5294c1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

@@ -1,0 +1,121 @@
+/* Variables */
+$border-color: #979797;
+
+// Office Locations Interactive Map
+.block--views-office-locations-block {
+  .block__title {
+    @include hide-block-title();
+  }
+
+  .block__content [aria-hidden=true] {
+    display: block;
+  }
+
+  .block__content {
+    .view-header,
+    .view-content {
+      @include media($tablet) {
+        display: none;
+      }
+    }
+  }
+
+  // Link for mobile navigation
+  .block__content .view-footer {
+    font-size: 1rem;
+
+    margin: 0;
+    display: none;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      width: initial;
+      height: initial;
+      padding: 0.75em 1em;
+      border-top: 2px solid $border-color;
+
+      display: block;
+      background: $primary-white;
+
+      color: #639dc0;
+      font-size: 2.4em;
+      font-family: $default-font;
+      text-align: left;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        margin: 0;
+        float: right;
+      }
+    }
+
+    @include media($tablet) {
+      display: block;
+    }
+  }
+}
+
+// Removes the block border on mobile set for all blocks in the main section.
+.section--main .region--content .block--views-office-locations-block {
+  @include media($tablet) {
+    border-top: 0;
+  }
+}
+
+// Office Location Buttons
+.block__content .view.view-office-locations.interactive-map.list .view-content ul {
+  @include clearfix;
+  @include unstyled-list;
+
+  li {
+    max-width: 13%;
+    margin: 0 1% 1em 0;
+
+    float: left;
+    position: relative;
+
+    text-align: left;
+    text-decoration: none;
+    transition: all 0.25s ease;
+
+    &:hover {
+      top: -1em;
+    }
+  }
+
+  li a {
+    text-decoration: none;
+
+    span {
+      padding: 0.5em;
+
+      display: block;
+      background: $primary-black;
+      border-radius: 0.25em;
+      box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.25);
+
+      color: $color-white;
+      font-size: 1.4em;
+      font-family: $primary-font;
+      font-weight: 300;
+    }
+
+    span[data-officetype*="Regional"] {
+      background: #96ce4d;
+      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// Hide view-footer on Locations page
+article.node--page + .block--views-office-locations-block {
+  .block__content .view-footer {
+    @include media($tablet) {
+      display: none;
+    }
+  }
+}

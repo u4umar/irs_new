@@ -1,0 +1,51 @@
+// Lists
+//
+// Default, unstyled system list elements.
+//
+// Markup:
+// <ul class="{{modifier_class}}">
+//   <li>List Item</li>
+//   <li>List Item
+//     <ul>
+//       <li>List Item</li>
+//       <li>List Item</li>
+//     </ul>
+//   </li>
+// </ul>
+// <ol class="{{modifier_class}}">
+//   <li>List Item</li>
+//   <li>List Item
+//     <ul>
+//       <li>List Item</li>
+//       <li>List Item</li>
+//     </ul>
+//   </li>
+// </ol>
+//
+// Styleguide Base Elements.Lists
+
+/* Variables */
+$list-margin-top: 2em;
+$list-margin-bottom: 2em;
+$list-item-margin-bottom: 0.75em;
+$list-item-margin-top: 0.75em;
+$list-line-height: 1.5;
+
+/* Selectors and Structure */
+ul, ol {
+  margin-bottom: $list-margin-bottom;
+  margin-top: $list-margin-top;
+  padding: 0;
+
+  li {
+    line-height: $list-line-height;
+    margin-bottom: $list-item-margin-bottom;
+    margin-top: $list-item-margin-top;
+    list-style-type: none;
+
+    > ul, ol {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}

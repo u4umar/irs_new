@@ -1,0 +1,26 @@
+// Office of Chief Council Pages
+
+body.page-node- {
+  &478, &510, &511, &512, &513, &514, &515, &516, &518, &26894, &26895
+  {
+    // Sets OCC social footer to display their LinkedIn only
+    .block--menu-menu-social-media-navigation {
+      li.leaf a {
+        display: none;
+
+        &#linkedin-cc {
+          display: block;
+        }
+      }
+    }
+
+    // Hides "View Open IRS Careers" block
+    .block--block-3 {
+      display: none;
+    }
+
+    a#contact-form {
+      display: none !important;
+    }
+  }
+}

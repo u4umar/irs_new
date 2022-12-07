@@ -1,0 +1,131 @@
+// Slideout Contact Webform
+.block--webform.slideout {
+  background: #404040;
+  z-index: 20;
+  overflow: auto;
+
+  .block__title {
+    display: block;
+    width: 66%;
+    margin: 0 auto;
+    margin-bottom: .5em;
+    font-size: 3.2em;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+    line-height: 1.25em;
+    text-align: center;
+    color: $primary-green;
+  }
+
+  .block__content .webform-client-form {
+    font-size: 1.3em;
+    line-height: 1.2em;
+
+    label {
+      height: 0;
+      visibility: hidden;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: $color-white;
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea {
+      box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    input[type=submit] {
+      width: 100%;
+
+      &:hover {
+        background-color: darken($button-background-color, 10%);
+      }
+
+      &.temporarily-disabled:hover {
+        background-color: $button-background-color;
+      }
+
+      &:active {
+        box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.7);
+        background-color: darken($button-background-color, 10%);
+      }
+    }
+
+    .temporarily-disabled, .temporarily-readonly {
+      opacity: 0.4;
+    }
+
+
+    #webform-component-name,
+    #webform-component-email,
+    #webform-component-purpose {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    fieldset.captcha {
+      margin: 0 0 1em 0;
+      border: 1px solid #96cf4e;
+      padding: 1em;
+      font-family: $primary-font;
+      font-size: 1.2em;
+      color: #96cf4e;
+
+      legend {
+        padding: 0 1em;
+      }
+
+      .fieldset-description {
+        display: none;
+      }
+
+      .form-item {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .field-prefix {
+        font-family: $primary-font, Georgia;
+        font-size: 1.8em;
+        text-align: center;
+        display: block;
+        margin-bottom: .5em;
+        color: $primary-green;
+
+        &::after {
+          content: "?";
+        }
+      }
+    }
+  }
+
+  .close-slideout {
+    cursor: pointer;
+  }
+
+  @include media($tablet) {
+    @include size(80% 100%);
+    @include position(fixed, 0 auto 0 0);
+    @include transform(translateX(-100%));
+    @include transition(all 0.25s linear);
+    font-size: 1rem;
+
+    padding: 2em;
+    z-index: 3;
+  }
+}
+
+// Hide form if in Postscript First Region or if there is
+// JavaScript is disabled.
+.region--postscript-first,
+.no-js {
+  .block--webform-client-block-404 {
+    display: none;
+  }
+}

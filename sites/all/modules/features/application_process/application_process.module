@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Application Process feature.
+ */
+
+include_once 'application_process.features.inc';

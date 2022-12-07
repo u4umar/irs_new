@@ -1,0 +1,80 @@
+// Youtube Employee Profile
+//
+// No styleguide reference.
+
+// Variables
+$yt-iframe-width: 480px;
+
+.view.view-youtube {
+  margin: 2em 0;
+
+  a {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    .title {
+      @include clearfix;
+
+      padding: 1em 1%;
+      background: #bfbfbf;
+      background: rgba(0, 0, 0, 0.75);
+
+      z-index: 3;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      color: $color-white;
+      font-size: 1em;
+      font-family: $secondary-font;
+      font-weight: normal;
+
+      .count {
+        float: right;
+      }
+    }
+
+    .thumbnail {
+      max-width: $yt-iframe-width;
+      position: relative;
+
+      img {
+        height: auto;
+      }
+
+      &::after {
+        content: url(../../images/icons/youtube_play.png);
+        z-index: 2;
+        display: block;
+
+        position: absolute;
+        top: 45%;
+        left: 44%;
+      }
+    }
+  }
+
+  a .title,
+  a .thumbnail img,
+  .field-content iframe {
+    width: 100%;
+    max-width: $yt-iframe-width;
+  }
+
+  @include media($tablet) {
+    a,
+    .field-content {
+      width: $yt-iframe-width;
+      margin: 0 auto;
+    }
+  }
+
+  @include media($phone) {
+    a,
+    .field-content {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+// Sitemap Skipnav
+//
+// No styleguide reference.
+
+// Block Container
+.block--views-basic-pages-block-2 {
+  font-size: 1rem;
+
+  .block__title {
+    margin-bottom: 0.5em;
+
+    color: $primary-black;
+    font-size: 2.4em;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+    line-height: 1em;
+  }
+
+  @include media($tablet) {
+    padding: 2em;
+  }
+}
+
+// View
+.view.sitemap.skipnav.list-asc {
+  .view-content,
+  .view-content .item-list {
+    @include clearfix;
+  }
+
+  .view-content {
+    padding: 1em 1em 0 1em;
+    border: 1px solid #ccc;
+
+    border-radius: 0.5em;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+    background: $color-white;
+  }
+
+  .view-content .item-list {
+    width: 7%;
+    margin-bottom: 1em;
+    display: block;
+    float: left;
+
+    &:nth-child(13n+1) {
+      clear: left;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      display: inline;
+
+      font-size: 1.8em;
+      font-family: $secondary-font;
+      line-height: 1em;
+      text-transform: uppercase;
+
+      a {
+        color: $primary-blue;
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+
+    ul.element-invisible {
+      display: none;
+    }
+  }
+
+  @include media($tablet) {
+    padding: 0 2em;
+  }
+}

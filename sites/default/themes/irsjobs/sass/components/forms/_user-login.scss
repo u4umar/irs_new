@@ -1,0 +1,157 @@
+// User Login Form
+//
+// Description
+// Default user login form provided by the Drupal CMS application.
+//
+// Markup:
+// <form class="user-login" action="/user" method="post" id="user-login" accept-charset="UTF-8">
+// 	<div>
+// 		<div class="form-item form-type-markupfield form-item-form-header form-wrapper" id="edit-interface-header">
+// 			<h3>User Log-in:</h3>
+// 		</div>
+// 		<div class="form-item form-type-textfield form-item-name">
+// 			<label for="edit-name">Username <span class="form-required" title="This field is required.">*</span>
+// 			</label>
+// 			<input type="text" id="edit-name" name="name" value="" size="60" maxlength="60" class="form-text required">
+// 			<div class="description">Enter your NITAAC username.</div>
+// 		</div>
+// 		<div class="form-item form-type-password form-item-pass">
+// 			<label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span>
+// 			</label>
+// 			<input type="password" id="edit-pass" name="pass" size="60" maxlength="128" class="form-text required">
+// 			<div class="description">Enter the password that accompanies your username.</div>
+// 		</div>
+// 		<input type="hidden" name="form_build_id" value="form-uwSa-OcPqHdzDCC4b-JJuk8U1DChHJCrnfZUOLTZQM8">
+// 		<input type="hidden" name="form_id" value="user_login">
+// 		<ul class="login-links">
+// 			<li>
+// 				<a href="/user/password" title="Request new password via e-mail.">Request a New Password</a>
+// 			</li>
+// 		</ul>
+// 		<div class="form-actions form-wrapper" id="edit-actions">
+// 			<input type="submit" id="edit-submit" name="op" value="Log in" class="form-submit">
+// 		</div>
+// 	</div>
+// </form>
+//
+// Styleguide Components.4
+
+/* Variables */
+$form-max-width: 48rem;
+$form-margin-bottom: 4rem;
+$form-font-size: 1.4rem;
+$form-header-color: #3b3b3b;
+$form-header-size: 1.2rem;
+$form-header-font: $secondary-font;
+$form-border-color: $form-header-color;
+$form-border-radius: 2px;
+
+/* Selectors and Structure */
+
+form#user-login {
+  width: $form-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $form-margin-bottom;
+  padding: 2em;
+  font-size: $form-font-size;
+  border-radius: $form-border-radius;
+  background: white;
+  overflow: hidden;
+  border: 1px solid #dedede;
+
+  // Default Input Style Reset
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // Form Header
+  .form-item.form-item-form-header {
+    display: none;
+    background: $form-header-color;
+
+    h3 {
+      margin: 0;
+      padding: .25em .5em;
+      font-size: $form-header-size;
+      font-family: $form-header-font;
+      color: white;
+    }
+  }
+
+  // General Form Fields
+  .form-item.form-type-textfield,
+  .form-item.form-type-password {
+    margin-bottom: 2rem;
+
+    label {
+      font-size: 1.6rem;
+      font-family: $primary-font;
+      font-weight: 300;
+      color: #747474;
+      margin-bottom: .33333333rem;
+    }
+
+    input {
+      padding: 0.75em 1em;
+      font-family: $secondary-font;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #3b3b3b;
+      border-radius: 2px;
+      border: 1px solid #cacaca;
+    }
+
+    input[type="password"] {
+      letter-spacing: 1ex;
+    }
+
+    .description {
+      margin-top: 0.5em;
+      font-family: $secondary-font;
+      color: #747474;
+    }
+  }
+
+  // Login Submit Fields
+  .form-actions {
+    input[type="submit"] {
+      @include transition(background .5s ease-in);
+      padding: 0.75em 0;
+      font-size: 1.8rem;
+      font-family: $secondary-font;
+      font-weight: 400;
+      color: white;
+      background: $color-blue;
+      border: none;
+      border-radius: 0.25em;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background: lighten($color-blue, 5%);
+      }
+    }
+  }
+
+  // Login Links
+  ul.login-links {
+    @include unstyled-list;
+    margin-bottom: 2rem;
+
+    li {
+      font-size: 1.4rem;
+      font-family: $secondary-font;
+    }
+
+    li a {
+      color: $color-blue;
+      text-decoration: none;
+      border-bottom: 1px dotted inherit;
+    }
+  }
+}

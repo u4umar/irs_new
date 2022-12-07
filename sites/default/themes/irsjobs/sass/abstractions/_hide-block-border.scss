@@ -1,0 +1,12 @@
+// Hide Block Border
+//
+// Adds a media query to the element to remove the `border-top` on mobile
+// devices. This is only necessary for blocks, which have a set `border-top`
+// by default in this theme for mobile devices.
+//
+// Styleguide Mixins.HideBlockBorder
+@mixin hide-block-border() {
+  @include media($tablet) {
+    border-top: 0;
+  }
+}

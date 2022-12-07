@@ -1,0 +1,173 @@
+.block--views-youtube-block-playlist {
+  .block__title {
+    @include hide-block-title;
+    display: none;
+  }
+}
+
+.section--main .block--views-youtube-block-playlist {
+  @include hide-block-border;
+}
+
+.view.youtube.profile-playlist.block.by-title.asc {
+  @include clearfix;
+  font-size: 1rem;
+
+  position: relative;
+
+  .view-filters {
+    height: 2em;
+    margin-bottom: 2em;
+
+    label {
+      display: none;
+    }
+
+    input {
+      float: left;
+    }
+
+    input[type="text"] {
+      width: 25%;
+      height: auto;
+      position: absolute;
+      left: 50%;
+
+      border: 1px solid $primary-black;
+      border-radius: 0.5em;
+      box-shadow: none;
+    }
+  }
+
+  .attachment,
+  & > .view-content {
+    width: 50%;
+    float: left;
+  }
+
+  .attachment {
+    .view.youtube.profile-featured.block.by-post.desc {
+      @include clearfix;
+      margin: 0;
+    }
+
+    .title {
+      width: 100%;
+      margin-top: 1em;
+      display: block;
+      font-size: 1.8em;
+      font-family: $primary-font;
+      line-height: 1.5em;
+    }
+
+    .title a {
+      color: $primary-black;
+      font-weight: 300;
+      text-decoration: none;
+      display: inline;
+    }
+  }
+
+  & > .view-content ul {
+    @include unstyled-list;
+    @include clearfix;
+    margin-bottom: 2em;
+  }
+
+  .view-content ul li {
+    width: 47%;
+    margin: 0 2% 2em 0;
+
+    float: left;
+    display: block;
+
+    .thumbnail-wrapper {
+      float: left;
+      display: block;
+      margin-right: 2em;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    a {
+      width: initial;
+
+      color: $primary-blue;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      line-height: 1.5em;
+      text-decoration: none;
+
+      display: inline;
+      position: static;
+
+      &:hover,
+      &:focus {
+        color: $primary-black;
+        border-bottom: 1px dotted $primary-black;
+      }
+    }
+
+    &:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+
+  ul.pager {
+    width: 50%;
+    margin: 0 0 0 50%;
+    padding: 0;
+
+    .ajax-progress {
+      display: none;
+    }
+  }
+
+  .external-link {
+    @include hide-block-title;
+  }
+
+  @include media(max-width 980px) {
+    .attachment,
+    & > .view-content {
+      width: 100%;
+    }
+
+    .view-content ul li {
+      width: 49%;
+      margin: 0 2% 2em 0;
+
+      &:nth-child(even) {
+        margin: 0 0 2em;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    margin: 1em 2em;
+  }
+
+  @include media($phone) {
+    margin: 1em 2em;
+
+    .attachment {
+      display: none;
+    }
+
+    & > .view-content {
+      width: 100%;
+      float: none;
+    }
+
+    .view-content ul li {
+      width: 100%;
+    }
+
+    .view-content ul li,
+    .view-content ul li:nth-child(even) {
+      margin: 0;
+    }
+  }
+}

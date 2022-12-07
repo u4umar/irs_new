@@ -1,0 +1,93 @@
+// Default Search Form Block
+//
+// This is used in the header for quick search access.
+//
+// Markup:
+// <style>
+//   .example-container {
+//     height: 50px;
+//   }
+//   .clearfix::after {
+//     content: "";
+//     clear: both;
+//   }
+//   .element-invisible {
+//     display: none;
+//   }
+// </style>
+// <div class="example-container clearfix">
+//   <div role="search" class="block block--search block--search-form">
+//     <div class="block__content">
+//       <form class="search-block-form"
+//             id="search-block-form"
+//             accept-charset="UTF-8">
+//         <div>
+//           <div class="container-inline">
+//             <h2 class="element-invisible">Search form</h2>
+//             <div class="form-item form-type-textfield form-item-search-block-form">
+//               <label class="element-invisible"
+//                      for="edit-search-block-form--2">
+//                 Search
+//               </label>
+//               <input title="Enter the terms you wish to search for."
+//                      id="edit-search-block-form--2"
+//                      name="search_block_form"
+//                      value=""
+//                      size="15"
+//                      maxlength="128"
+//                      class="form-text"
+//                      type="text">
+//             </div>
+//             <div class="form-actions form-wrapper" id="edit-actions">
+//               <input id="edit-submit" name="op" value="Search" class="form-submit" type="submit">
+//             </div>
+//             <input name="form_build_id" type="hidden">
+//             <input name="form_id" value="search_block_form" type="hidden">
+//           </div>
+//         </div>
+//       </form>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide Components.Blocks.DefaultSearchForm
+.block--search-form {
+  font-size: 1.3rem;
+  line-height: 1.5em;
+  float: right;
+  position: relative;
+  top: 1rem;
+
+  .form-text {
+    width: 2em;
+    height: 2em;
+
+    margin: 0;
+    padding: 0 1em;
+
+    border: 1px solid transparent;
+    border-radius: 2em;
+    background: transparent url(../../images/icons/Search.png) right center no-repeat;
+    transition: all ease 0.25s;
+
+    &:focus {
+      width: 15em;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+
+      box-shadow: #06f 0 0 7px;
+      background-color: $color-white;
+    }
+  }
+
+  .form-submit,
+  input[type="submit"] {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.region--navigation .block--search-form {
+  @include media($tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,65 @@
+// Gray Colors
+//
+// Palette for all primary, secondary, tertiary and alternative color schemes.
+//
+// Markup:
+// <div class="color-palette styleguide-only">
+//  <label>Gray</label>
+//  <ul>
+//    <li class="color__gray-lighter"></li>
+//    <li class="color__gray"></li>
+//    <li class="color__gray-darker"></li>
+//  </ul>
+// </div>
+//
+// Styleguide Colors.Gray
+
+/* Variables */
+$color-gray-lighter: #ccc !default;
+$color-gray: #979797 !default;
+$color-gray-darker: #4b4f56 !default;
+
+$primary-black: $color-gray-darker;
+
+/*** Selectors and Structure ***/
+
+/***
+ * Note:
+ * SASS files in the /variables directory are strictly used for variable inclusion.
+ * The selectors and structure below are strictly for the styleguide generation.
+ */
+.color-palette.styleguide-only {
+  label {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #212121;
+    text-transform: uppercase
+  }
+
+  ul {
+    margin: 0.5em 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      background-color: #ccc;
+
+      &.color__gray-lighter {
+        background-color: $color-gray-lighter;
+      }
+
+      &.color__gray {
+        background-color: $color-gray;
+      }
+
+      &.color__gray-darker {
+        background-color: $color-gray-darker;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Front page featured profile by drag and drop weight.
+//
+// No styleguide reference.
+.block--views-youtube-block {
+  @include clearfix;
+  font-size: 1em;
+
+  width: 48%;
+  margin: 0 2% 0 0;
+
+  float: left;
+
+  .block__title {
+    font-size: 2.8em;
+    font-family: $primary-font;
+  }
+
+  @include media($tablet) {
+    width: 100%;
+    padding: 4em 2em 0;
+    float: none;
+
+    .block__title {
+      text-align: center;
+    }
+  }
+
+  @include media($phone) {
+    margin: 0;
+  }
+}

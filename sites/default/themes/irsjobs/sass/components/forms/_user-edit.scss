@@ -1,0 +1,147 @@
+// User Edit Form
+
+/* Variables */
+$form-max-width: 100%;
+$form-margin-bottom: 4rem;
+$form-font-size: 1.4rem;
+$form-header-color: #3b3b3b;
+$form-header-size: 1.2rem;
+$form-header-font: $secondary-font;
+$form-border-color: $form-header-color;
+$form-border-radius: 2px;
+
+/* Selectors and Structure */
+
+form#user-profile-form {
+  width: $form-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $form-margin-bottom;
+  padding: 2em;
+  font-size: $form-font-size;
+  border-radius: $form-border-radius;
+  background: white;
+  overflow: hidden;
+  border: 1px solid #dedede;
+
+  // Default Input Style Reset
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // Form Header
+  .form-item.form-item-form-header {
+    display: none;
+    background: $form-header-color;
+
+    h3 {
+      margin: 0;
+      padding: .25em .5em;
+      font-size: $form-header-size;
+      font-family: $form-header-font;
+      color: white;
+    }
+  }
+
+  // General Form Fields
+  .form-item.form-type-textfield,
+  .form-item.form-type-password {
+    margin-bottom: 2rem;
+
+    label {
+      font-size: 1.6rem;
+      font-family: $primary-font;
+      font-weight: 300;
+      color: #747474;
+      margin-bottom: .33333333rem;
+    }
+
+    input {
+      padding: 0.75em 1em;
+      font-family: $secondary-font;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #3b3b3b;
+      border-radius: 2px;
+      border: 1px solid #cacaca;
+    }
+
+    input[type="password"] {
+      letter-spacing: 1ex;
+    }
+
+    .description {
+      margin-top: 0.5em;
+      font-family: $secondary-font;
+      color: #747474;
+    }
+  }
+
+  // Password Guidance Fields
+  .form-item.form-type-password.password-parent,
+  .form-item.form-type-password.confirm-parent {
+    label,
+    input {
+      width: 50%;
+    }
+
+    div.password-strength,
+    div.password-confirm {
+      width: 48%;
+    }
+  }
+
+  // Hide Unnecessary Fields
+  fieldset#edit-picture,
+  fieldset#edit-timezone,
+  fieldset#edit-redirect,
+  fieldset#edit-metatags {
+    display: none;
+  }
+
+  // Login Submit Fields
+  .form-actions {
+    @include clearfix;
+
+    input[type="submit"] {
+      @include transition(background .5s ease-in);
+      float: right;
+      width: auto;
+      padding: 0.75em 4em;
+      font-size: 1.6rem;
+      font-family: $secondary-font;
+      font-weight: 400;
+      color: white;
+      background: $color-blue;
+      border: none;
+      border-radius: 0.25em;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background: lighten($color-blue, 5%);
+      }
+    }
+  }
+
+  // Login Links
+  ul.login-links {
+    @include unstyled-list;
+    margin-bottom: 2rem;
+
+    li {
+      font-size: 1.4rem;
+      font-family: $secondary-font;
+    }
+
+    li a {
+      color: $color-blue;
+      text-decoration: none;
+      border-bottom: 1px dotted inherit;
+    }
+  }
+}

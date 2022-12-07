@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Job Descriptions feature.
+ */
+
+include_once 'job_descriptions.features.inc';

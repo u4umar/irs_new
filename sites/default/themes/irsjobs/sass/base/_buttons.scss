@@ -1,0 +1,64 @@
+// Buttons
+//
+// Default styling for buttons and hyperlinks disguised as buttons
+//
+// .visited - visited state
+// .hover  	- hover state
+// .active 	- active state
+//
+// Markup:
+// <a href="#" class="button {{modifier_class}}">Default Button</a>
+//
+// Styleguide Base Elements.Buttons
+
+/* Variables */
+
+$button-background-color: $color-green;
+$button-font-color: $color-white;
+$button-font-family: $primary-font;
+$button-padding: 16px 84px 16px 17px;
+$button-weight: 300;
+
+
+/* Selectors and Structure */
+a.button {
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  padding: $button-padding;
+  font-family: $button-font-family;
+  color: $button-font-color !important;
+  text-decoration: none;
+  background-color: $button-background-color;
+  font-weight: $button-weight;
+  position: relative;
+  display: inline-block;
+  transition: background-color 1s ease;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(../../images/button-arrow.svg) no-repeat;
+    width: 13px;
+    height: 18px;
+    right: 15px;
+    top: 17px;
+  }
+
+  &.hover,
+  &:hover,
+  &:focus {
+    background-color: lighten($button-background-color, 10%);
+    box-shadow: none;
+  }
+
+  &.active,
+  &:active {
+    background-color: darken($button-background-color, 5%);
+  }
+
+  &.visited,
+  &:visited {
+    background-color: darken($button-background-color, 5%);
+  }
+}

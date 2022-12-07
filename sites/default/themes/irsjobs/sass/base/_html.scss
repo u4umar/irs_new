@@ -1,0 +1,32 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  background: #404040;
+  overflow-x: hidden;
+}
+
+.lt-ie9 {
+  // Hack for clearfixes
+  * {
+    filter: none !important;
+  }
+}
+
+[aria-hidden=true] {
+  display: none;
+}
+
+:focus {
+  outline: none;
+}

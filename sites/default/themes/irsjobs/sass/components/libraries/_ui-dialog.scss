@@ -1,0 +1,67 @@
+.ui-dialog {
+  background: $color-white;
+
+  .ui-icon {
+    background-image: url(../../images/icons/ui-icons-custom_256x240.png);
+  }
+
+  .ui-widget-header {
+    border: none;
+    background: none;
+    color: transparent;
+  }
+
+  .ui-dialog-content {
+    padding: 0.5em 0;
+    text-align: center;
+
+    .announcement {
+      padding: 1em 2em;
+      background: #ecebe7;
+
+      > h4 {
+        color: $primary-black;
+        font-size: 2.4em;
+        font-family: $primary-font;
+        font-weight: $font-bold;
+      }
+
+      p {
+        color: $primary-black;
+        font-size: 1.4em;
+        font-family: $primary-font;
+        font-weight: 300;
+
+        a {
+          color: $primary-blue;
+          text-decoration: none;
+
+          &:hover,
+          &:focus {
+            border-bottom: 1px dotted $primary-blue;
+          }
+        }
+      }
+    }
+
+    .response {
+      padding: 0 2em;
+
+      h4,
+      p {
+        color: $primary-black;
+        font-family: $primary-font;
+      }
+
+      h4 {
+        font-size: 1.8em;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1.4em;
+        font-weight: 300;
+      }
+    }
+  }
+}

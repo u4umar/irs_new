@@ -1,0 +1,31 @@
+/* Experience Calculator
+================== */
+
+#experience-calculator .result {
+    display: none;
+}
+
+#experience-calculator .option-condition {
+    display: none;
+}
+
+#experience-calculator input[type~=text] {
+    width: 5em;
+}
+
+#experience-calculator .saa table {
+    width: auto;
+}
+
+#experience-calculator .saa table tr td, #experience-calculator .saa table tr th  {
+    padding: .2em;
+}
+
+#experience-calculator ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#experience-calculator .question-condition {
+    display: none;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "irsjobs",
+  "version": "1.0.0",
+  "dependencies": {
+    "respond": "fubhy/respond",
+    "selectivizr": "fubhy/selectivizr",
+    "html5shiv": "fubhy/html5shiv",
+    "matchmedia": "fubhy/matchmedia",
+    "pie": "fubhy/pie",
+    "fontawesome": "~4.4.0",
+    "requirejs": "^2.1.22",
+    "moment": "momentjs#^2.11.2",
+    "jquery-accessibleMegaMenu": "https://github.com/adobe-accessibility/Accessible-Mega-Menu/blob/726ea8eaf716757ab778d5d8fce73cbc8e889de3/js/jquery-accessibleMegaMenu.js",
+    "matchHeight": "matchheight#^0.7.0"
+  }
+}

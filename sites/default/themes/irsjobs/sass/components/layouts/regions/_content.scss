@@ -1,0 +1,10 @@
+.region--content {
+  @include media($tablet) {
+    padding: 0;
+
+    // Skip Nav Link
+    #main-content {
+      padding-top: 6em;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// Content Zone
+//
+// No styleguide reference.
+.zone-wrapper--content {
+  padding: 4em 0;
+  background: $color-white-dark;
+
+  @include media($tablet) {
+    padding: 0 0 6em;
+  }
+}

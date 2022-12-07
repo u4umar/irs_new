@@ -1,0 +1,204 @@
+// Subpage Overview List
+//
+// Styles the list of pages as flippable cards. This is also used for
+// office location lists. The back face uses another view, but to style it
+// similarly specific rules need to be used to override.
+//
+// Styleguide Mixins.SubpageOverviewList
+@mixin styled-overview-list {
+  @include clearfix;
+
+  // Card List
+  > .view-content > .item-list > ul {
+    @include clearfix;
+    @include unstyled-list;
+
+    // Card Container
+    > li.flip {
+      width: 47%;
+      height: 25em; // Fallback if JS doesn't override
+      min-height: 25em;
+      margin: 0 2% 2em 0;
+
+      float: left;
+      display: block;
+      position: relative;
+      text-align: center;
+
+      perspective: 800px;
+
+      .toggler {
+        position: relative;
+        cursor: pointer;
+
+        color: $primary-blue;
+        font-size: 3.2em;
+        font-family: $secondary-font;
+        font-weight: 300;
+      }
+    }
+
+    // Card
+    > li.flip .card {
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      transform-style: preserve-3d;
+      transition: 0.5s;
+
+      // Card Faces
+      .face {
+        width: 100%;
+        height: 100%;
+
+        padding: 0 2%;
+        border: 1px solid #c4c4c4;
+
+        border-radius: 0.5em;
+        background: $color-white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(0, 0, 0, 0.1);
+
+        display: block;
+        position: absolute;
+
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+
+        .title {
+          margin: 1em 0 0.5em;
+
+          color: $primary-blue;
+          font-size: 2.4em;
+          font-family: $primary-font;
+          font-weight: normal;
+
+          a {
+            color: $primary-blue;
+            text-decoration: none;
+
+            &::after {
+              content: ">";
+              margin-left: 1em;
+            }
+          }
+        }
+
+        &.back {
+          color: $color-white;
+          background: $primary-blue;
+          transform: rotateX(-180deg);
+
+          .title,
+          .title a,
+          .desc,
+          .desc a {
+            color: $color-white;
+          }
+        }
+      }
+
+      // Card Face Titles
+      .face .title {
+        margin: 1em 0 0.5em;
+
+        color: $primary-blue;
+        font-size: 2.4em;
+        font-family: $primary-font;
+        font-weight: normal;
+
+        a {
+          color: $primary-blue;
+          text-decoration: none;
+
+          &::after {
+            content: ">";
+            margin-left: 1em;
+          }
+        }
+      }
+
+      // Descriptions
+      .face .desc {
+        display: block;
+        color: $primary-black;
+
+        font-size: 1.4em;
+        line-height: 1.75em;
+        font-family: $primary-font;
+        font-weight: 300;
+      }
+
+      // Flip Animation
+      &.flipped {
+        transform: rotateX(-180deg);
+      }
+    }
+  }
+
+  @include media($tablet) {
+    // Bottom border is added by the view-jobs block, which is on every page.
+    > .view-content > .item-list > ul {
+      > li.flip {
+        width: initial;
+        height: initial;
+        min-height: auto;
+
+        margin: 0;
+        border-top: 2px solid $border-color;
+
+        float: none;
+        text-align: left;
+
+        .card {
+          .face.front {
+            width: initial;
+            height: initial;
+
+            padding: 0;
+            border: none;
+
+            background: none;
+            box-shadow: none;
+            transition: none;
+
+            position: static;
+          }
+
+          .face.front .title {
+            margin: 0;
+
+            a {
+              padding: 0.75em 3em 0.75em 1em;
+              background: $primary-white;
+              font-family: $default-font;
+
+              display: block;
+              position: relative;
+
+              &::after {
+                margin: 0 1em 0 0;
+                display: block;
+
+                position: absolute;
+                top: 50%;
+                bottom: 0;
+                right: 0;
+
+                transform: translateY(-50%);
+              }
+            }
+          }
+
+          .face.back,
+          .face.front .desc,
+          .face.front .toggler {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

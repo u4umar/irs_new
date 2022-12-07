@@ -1,0 +1,52 @@
+// Black Colors
+//
+// Palette for all primary, secondary, tertiary and alternative color schemes.
+//
+// Markup:
+// <div class="color-palette styleguide-only">
+//  <label>Black</label>
+//  <ul>
+//    <li class="color__black"></li>
+//  </ul>
+// </div>
+//
+// Styleguide Colors.Black
+
+/* Variables */
+$color-black: #000 !default;
+
+
+/*** Selectors and Structure ***/
+
+/***
+ * Note:
+ * SASS files in the /variables directory are strictly used for variable inclusion.
+ * The selectors and structure below are strictly for the styleguide generation.
+ */
+.color-palette.styleguide-only {
+  label {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #212121;
+    text-transform: uppercase
+  }
+
+  ul {
+    margin: 0.5em 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      background-color: #ccc;
+
+      &.color__black {
+        background-color: $color-black;
+      }
+    }
+  }
+}

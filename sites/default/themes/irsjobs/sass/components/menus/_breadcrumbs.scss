@@ -1,0 +1,71 @@
+// Breadcrumbs
+//
+// Markup:
+// <div class="block block--breadcrumb">
+//   <ul class="breadcrumb">
+//     <li><a href="#">Home</a></li>
+//     <li><a href="#">Parent</a></li>
+//     <li class="active">Current Page</li>
+//   </ul>
+// </div>
+//
+// Styleguide Components.Menus.Breadcrumbs
+
+// Variables
+$link-color: #0062a0;
+
+// Selectors and Structure
+.block--breadcrumb {
+  font-size: 1rem;
+
+  .breadcrumb {
+    @include unstyled-list;
+
+    li,
+    li a,
+    li a:hover {
+      text-decoration: none;
+    }
+
+    li {
+      color: $primary-black;
+      display: inline-block;
+
+      font-family: $secondary-font;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    li a,
+    li a:visited,
+    li a::after {
+      color: $primary-blue;
+    }
+
+    li a {
+      margin-right: 0.5em;
+
+      &:hover,
+      &:focus,
+      &::after,
+      &:hover::after {
+        color: $primary-black;
+      }
+
+      &::after {
+        content: ">";
+        padding-left: 0.5em;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    padding: 0 2em;
+
+    ul.breadcrumb li {
+      font-size: 1.5em;
+    }
+  }
+}

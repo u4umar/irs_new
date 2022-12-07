@@ -1,0 +1,11 @@
+// Header Section
+//
+// No styleguide reference.
+.section--header {
+  background-color: $color-white-dark;
+
+  // Make room for mobile navigation
+  @include media($tablet) {
+    margin-top: $mobile-nav-header-height;
+  }
+}

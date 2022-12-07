@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Set up the USA Jobs feed with proper url in configuration so it's pre-populated
+ */
+function feature_usa_jobs_update_7000() {
+  // Remove any prior configuration possible from feature enabling
+  db_query('DELETE FROM feeds_source WHERE id = :id', array(':id' => 'usa_jobs'));
+
+  // Insert the configuration for USA Jobs
+  db_query('
+    INSERT INTO
+      feeds_source
+      (
+        id,
+        feed_nid,
+        config,
+        source,
+        state,
+        fetcher_result,
+        imported
+      )
+      VALUES
+      (
+        :id,
+        :feed_nid,
+        :config,
+        :source,
+        :state,
+        :fetcher_result,
+        :imported
+      )
+  ', array(
+    ':id' => 'usa_jobs',
+    ':feed_nid' => 0,
+    ':config' => 'a:2:{s:19:"FeedsJSONPathParser";a:0:{}s:16:"FeedsHTTPFetcher";a:1:{s:6:"source";s:77:"https://data.usajobs.gov/api/jobs?OrganizationID=TR93&NumberOfJobs=250&Page=1";}}',
+    ':source' => 'https://data.usajobs.gov/api/jobs?OrganizationID=TR93&NumberOfJobs=250&Page=1',
+    ':state' => 'b:0;',
+    ':fetcher_result' => 'b:0;',
+    ':imported' => 0,
+  ));
+}

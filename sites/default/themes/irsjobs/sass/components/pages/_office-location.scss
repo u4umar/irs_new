@@ -1,0 +1,88 @@
+// Office Location Pages
+//
+// No styleguide reference.
+.node-type-location {
+  .node--location {
+    @include row;
+
+    .column-left,
+    .column-right {
+      @include span-columns(6);
+
+      @include media($desktop) {
+        @include span-columns(12);
+      }
+    }
+  }
+
+  .node__title {
+    margin-top: 0;
+    line-height: 1em;
+  }
+
+  // Only visible on Regional Office location pages
+  .field--name-field-location-satellite-office {
+    .field__label {
+      margin-bottom: 0.5em;
+      font-size: 1.8em;
+      font-family: $primary-font;
+    }
+
+    .field__item {
+      margin-right: 1em;
+      display: inline-block;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+
+      a {
+        color: $primary-blue;
+        text-decoration: none;
+      }
+
+      &:nth-child(n+2)::before {
+        content: "|";
+        margin-right: 1em;
+        color: #ccc;
+      }
+    }
+  }
+
+  .field--name-field-location-mailto {
+    margin-top: 1em;
+
+    .field__label {
+      margin-bottom: 0.5em;
+      font-size: 1.8em;
+      font-family: $primary-font;
+    }
+
+    .field__item {
+      margin-right: 1em;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      display: inline-block;
+
+      a {
+        color: $primary-blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    .field--name-body,
+    .field--name-field-location-mailto {
+      margin-bottom: 4em;
+    }
+
+    // Only visible on Regional Office location pages
+    .field--name-field-location-satellite-office .field__item {
+      margin: 0 0 1em;
+      display: block;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

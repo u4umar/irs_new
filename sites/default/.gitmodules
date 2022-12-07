@@ -1,0 +1,3 @@
+[submodule "sites/default"]
+	path = sites/default
+	url = /var/www/html/sites/default

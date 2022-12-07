@@ -1,0 +1,32 @@
+<?php
+
+function irs_utility_init(){
+  $path = drupal_get_path_alias(current_path());
+
+  // Add JS for employee profiles page
+  if (($pos = strpos($path, 'who/employee-profiles')) !== FALSE){
+    drupal_add_js(drupal_get_path('module','irs_utility').'/assets/irs-employee-profile.js');
+  }
+}
+
+/**
+ * Implements hook_admin_paths_alter();
+*/
+function irs_utility_admin_paths_alter(&$paths) {
+  $paths['user/*/edit'] = FALSE;
+}
+
+/**
+ * Alter the filter values that will be passed to the view object.
+ *
+ * @param array $filters
+ *   An array of filters as key-value pairs (coming from incoming GET or POST
+ *   request) that should be passed on to the view.
+ */
+function irs_utility_mefibs_filter_alter(&$filters) {
+  // This is a dumb example that would effectively break the selection of items
+  // per page. Only for illustration purposes.
+  //$filters['item_per_page'] = 10;
+//  dpm($filters);
+}
+

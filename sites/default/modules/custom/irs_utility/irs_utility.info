@@ -1,0 +1,5 @@
+name = "IRS Careers Utility"
+description = "Utility functions to site functionality"
+package = "IRS Careers"
+
+core = 7.x

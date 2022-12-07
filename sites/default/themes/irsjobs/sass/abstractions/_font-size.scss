@@ -1,0 +1,17 @@
+// Font-Size
+//
+// Used to set the component-level font-size using a `rem` value and providing
+// an `em` fallback using Bourbon's conversion functions. Those functions,
+// and by extension this mixin, depend on the `$em-base` Bourbon variable
+// to calculate the component font-size based on the root font-size.
+//
+// Thus, this mixin cannot be used for the root element or components whose
+// parent font-size is not the root element (e.g. a view within a view).
+//
+// $pxValue - A pixel value (e.g. `1px`)
+//
+// Styleguide Mixins.FontSize
+@mixin font-size($pxValue) {
+  font-size: em($pxValue);
+  font-size: rem($pxValue);
+}

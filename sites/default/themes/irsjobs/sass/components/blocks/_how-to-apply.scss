@@ -1,0 +1,43 @@
+// GS Schedule Block and How To Apply Block
+
+.block--block-1,
+.block--block-2 {
+  @include clearfix;
+
+  width: 32%;
+  float: left;
+
+  .block__title {
+    @include hide-block-title;
+  }
+
+  .block__content {
+    @include clearfix;
+
+    a {
+      display: block;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      font-family: $secondary-font;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: $primary-blue;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 auto 1em auto;
+      display: block;
+    }
+  }
+
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+// GS Schedule Block
+.block--block-1 {
+  margin-left: 25%;
+}

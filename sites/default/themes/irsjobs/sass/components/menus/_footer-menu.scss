@@ -1,0 +1,137 @@
+// Footer Menu
+//
+// Menu linking copyright, privacy policy, and sitemap.
+//
+// Markup:
+// <nav role="navigation" class="block block--menu block--menu-menu-footer">
+//   <h2 class="block__title">Footer</h2>
+//   <ul class="menu">
+//     <li class="first leaf">
+//       <a href="#" id="copyright">©2016 United States Internal Revenue Service</a>
+//     </li>
+//     <li class="leaf">
+//       <a href="#">Privacy Policy</a>
+//     </li>
+//     <li class="leaf">
+//       <a href="#">Sitemap</a>
+//     </li>
+//     <li class="last leaf">
+//       <a href="#" id="contact-form">Get in Touch</a>
+//     </li>
+//   </ul>
+// </nav>
+//
+// Styleguide Components.Menus.Footer
+.block--menu-menu-footer {
+  @include clearfix;
+  font-size: 1rem;
+
+  padding: 2em 0 0;
+  border-top: 1px solid #666;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  position: relative;
+
+  .block__title {
+    @include hide-block-title;
+  }
+
+  .menu {
+    @include unstyled-list;
+
+    border: 0;
+    text-align: left;
+
+    li.first {
+      width: 100%;
+      margin: 0 0 1em 0;
+      clear: both;
+    }
+
+    li {
+      margin: 0 1em 0 0;
+      float: left;
+      display: block;
+
+      &::after {
+        content: "|";
+        margin-left: 1em;
+      }
+    }
+
+    li.first::after,
+    li.last::after {
+      content: "";
+      margin-left: 0;
+    }
+  }
+
+  .menu li a {
+    color: $primary-blue;
+    font-weight: $font-bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px dotted $primary-blue;
+
+    &:hover,
+    &:focus {
+      color: $primary-black;
+      border-bottom: none;
+    }
+
+    &#copyright {
+      color: $primary-black;
+      cursor: text;
+      border-bottom: none;
+    }
+
+    &#contact-form {
+      margin: -1em 0 0 0;
+      padding: 1em 2em;
+
+      position: absolute;
+      right: 0;
+      display: block;
+      overflow: hidden;
+
+      color: $color-white;
+      background: $primary-green;
+      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0.25em;
+
+      font-weight: normal;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  @include media($tablet) {
+    padding: 0;
+    border: 0;
+
+    .menu li a#contact-form {
+      display: none;
+    }
+
+    // Center copyright
+    .menu li.first {
+      text-align: center;
+    }
+
+    .menu li a {
+      font-size: 1.5em;
+      font-weight: $font-normal;
+
+      &#copyright {
+        display: block;
+        font-family: $primary-font;
+        text-align: left;
+      }
+    }
+  }
+
+  @include media($footer-phone) {
+    .menu li a#copyright {
+      text-align: center;
+    }
+  }
+}

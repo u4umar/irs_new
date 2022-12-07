@@ -1,0 +1,14 @@
+/* Fit Check Calculator
+================== */
+
+#fit-check-calculator .result {
+    display: none;
+}
+
+#fit-check-calculator .question {
+    display: none;
+}
+
+#fit-check-calculator .start {
+    display: inline;
+}

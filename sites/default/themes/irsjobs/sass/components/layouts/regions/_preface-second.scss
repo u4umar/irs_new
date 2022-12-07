@@ -1,0 +1,9 @@
+.region--preface-second {
+  @include span-columns(6);
+
+  @include media($tablet) {
+    @include span-columns(12);
+
+    padding: 0;
+  }
+}

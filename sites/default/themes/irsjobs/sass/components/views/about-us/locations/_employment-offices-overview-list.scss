@@ -1,0 +1,23 @@
+// Employment Offices Overview List
+.view.view-office-locations.office-locations.office-type.employment {
+  @include styled-overview-list;
+
+  // Backface View for Employement Offices
+  .view.office-locations.conditional.related-office-details {
+    width: 66%;
+    margin: 0 auto;
+
+    font-size: 1.2em;
+    font-family: $secondary-font;
+    font-weight: 300;
+    text-align: right;
+
+    .static-map {
+      margin: 0 2em 2em 0;
+
+      border: 2px solid $color-white;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+      float: left;
+    }
+  }
+}

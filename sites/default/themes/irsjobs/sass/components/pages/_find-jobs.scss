@@ -1,0 +1,260 @@
+
+.irs-browse-opportunities {
+  a {
+    background-image: url('/sites/default/themes/irsjobs/images/search-white.svg');
+    background-position: 40px center;
+    background-repeat: no-repeat;
+    background-color: $color-blue;
+    padding: 40px;
+    padding-left: 100px;
+    font-size: 1.5em;
+    font-family: $primary-font;
+    color: #fff !important;
+    font-weight: bold;
+    display: block;
+    margin: 20px 0;
+    width: 92%;
+  }
+
+  a:hover {
+    background-color: $color-blue-darker;
+  }
+}
+
+
+// variables
+$anim-speed: 0.3s;
+
+// main styles
+.irs-findjob-tiles {
+  width: auto;
+  font-size: 0;
+  text-align: left;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%,-50%);
+
+  .irs-findjob-tile {
+    display: inline-block;
+    margin: 20px 20px 0 0;
+    text-align: center;
+    opacity: .99;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .05);
+    width: 45%;
+
+    &:before {
+      content: '';
+      // background: linear-gradient(
+      //   to bottom,
+      //   rgba(0,0,0,0) 0%,
+      //   rgba(0,0,0,0.7) 100%
+      // );
+      background-color: $color-blue;
+      width: 100%;
+      height: 80px;
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      transition-property: bottom, opacity;
+      transition-duration: $anim-speed;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .irs-findjob-details {
+      font-size: 16px;
+      padding: 20px;
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+
+      span {
+        display: block;
+        opacity: 0;
+        position: relative;
+        top: 150px;
+        transition-property: top, opacity;
+        transition-duration: $anim-speed;
+        transition-delay: 0s;
+      }
+
+      .irs-findjob-title {
+        line-height: 1;
+        font-weight: 600;
+        font-size: 34px;
+        text-align: center;
+        font-family: $primary-font;
+      }
+    }
+
+    &:focus,
+    &:hover {
+
+      &:before,
+      span {
+        opacity: 1;
+      }
+
+      &:before {
+        top: 80%;
+      }
+
+      span {
+        top: 0;
+      }
+
+      .irs-findjob-title {
+        transition-delay: 0.15s;
+      }
+
+    }
+  }
+}
+
+
+.irs-block {
+  form.views-exposed-form-usajobs-page-1 {
+    .views-widget-filter-field_usajobs_category_ref_tid,
+    .views-widget-filter-field_usajobs_gslevel_ref_tid,
+    .views-widget-filter-field_field_usajobs_work_type_tid {
+      display: none;
+    }
+
+    .views-widget-filter-combine {
+      width: 80%;
+      margin-right: 0;
+
+      label {
+        font-size: 0.8em;
+        color: $color-gray-darker;
+        display: inline-block;
+        background-image: url('/sites/default/themes/irsjobs/images/search-black.svg');
+        background-position: left center;
+        background-repeat: no-repeat;
+        padding: 5px 25px;
+
+      }
+    }
+
+    input {
+      width: 100%;
+      height: auto;
+      margin: 0 0 1em;
+      padding: 0.75em 1em;
+      border: 1px solid #c4c4c4;
+      display: block;
+      background: $color-white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+      inset 0 -2px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 0.2em;
+    }
+
+    .views-submit-button {
+      input {
+        // padding: 1em 2em;
+
+        display: inline-block;
+
+        color: $color-white;
+        background: $primary-green;
+        box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 0.25em;
+        font-size: 0.8em;
+        margin: 25px 5px 0;
+        padding: 1em;
+        font-weight: normal;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+.irs-block {
+  &.block--views-success-stories-block {
+    margin-bottom: 80px;
+
+    .view-success-stories {
+      .views-row {
+        font-family: $primary-font;
+        font-weight: $font-normal;
+        background-color: #fff;
+        border: 1px solid #969696;
+        margin: 10px;
+        padding: 20px;
+        -webkit-box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+        float: left;
+        max-width: 40%;
+        margin-right: 20px;
+
+        .views-field {
+
+        }
+
+        .views-field-field-headshot-image {
+          width: 100px;
+          float: left;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .views-field-title,
+        .views-field-field-job-title {
+          margin-left: 120px;
+        }
+
+        .views-field-title {
+          text-transform: uppercase;
+          letter-spacing: 0;
+          font-weight: bold;
+        }
+
+        .views-field-field-job-title {
+          color: $color-gray-darker;
+          font-weight: bold;
+        }
+
+        .views-field-body {
+          clear: both;
+          font-weight: bold;
+          color: $color-gray-darker;
+
+        }
+
+        .views-field-nid {
+          a.button {
+            border: 3px solid $color-blue;
+            border-style: inset;
+            color: $color-blue !important;
+            font-weight: bold;
+            background-color: transparent;
+            padding: 0.5em;
+            text-align: center;
+            text-transform: unset;
+          }
+        }
+      }
+    }
+  }
+}

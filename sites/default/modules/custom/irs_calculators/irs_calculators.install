@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implementation of hook_install
+ */
+function irs_calculators_install() {
+
+  require_once('irs_calculators.module');
+  require('includes/irs_calculators.fitcheck.install_content.inc');
+  require('includes/irs_calculators.experience.install_content.inc');
+
+  variable_set(IRS_FITCHECK_CONTENT , $fitcheck_content);
+  variable_set(IRS_FITCHECK_QUESTIONS, $fitcheck_questions);
+  variable_set(IRS_EXPERIENCE_QUESTIONS, $experience_questions);
+}

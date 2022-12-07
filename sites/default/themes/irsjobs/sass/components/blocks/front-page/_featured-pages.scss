@@ -1,0 +1,156 @@
+// Homepage Featured Basic Pages Block
+//
+// Sets spacing for corresponding view on desktop and mobile devices.
+//
+// No styleguide reference.
+#block-views-basic-pages-block-1 {
+  margin: 4em 0;
+
+  @include media($tablet) {
+    padding: 4em 0 0;
+  }
+}
+
+// Homepage Featured Jobs
+.irs-featured-items {
+  text-align: left;
+  font-size: 1.6rem;
+
+  .page-careers & {
+    margin: 0 0 4em;
+  }
+}
+
+.page-careers .zone--content .block.irs-block.block--views h2 {
+  margin-top: 0;
+}
+
+.USAJobs.block.homepage.refresh {
+  .view-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .views-row {
+    font-family: $primary-font;
+    font-weight: $font-normal;
+    background-color: #fff;
+    border: 1px solid #969696;
+    margin: 10px;
+    padding: 20px;
+    -webkit-box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 16px 0 rgba(0, 0, 0, 0.3);
+
+    .views-field {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .views-field-title {
+      a {
+        text-decoration: underline;
+        font-weight: $font-bold;
+      }
+    }
+
+    .views-field-views-conditional {
+      background-image: url('/sites/default/themes/irsjobs/images/locations.svg');
+      background-position: left center;
+      background-repeat: no-repeat;
+      padding-left: 20px;
+    }
+
+    .views-field-views-conditional,
+    .views-label-nothing-1 {
+      font-weight: $font-bold;
+    }
+
+    .views-field-nothing {
+      a.button.irs-share-link {
+        border: 3px solid $color-blue;
+        color: $color-blue !important;
+        font-weight: bold;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+
+// Displayed on the Student's Page
+body.section-find-job {
+  .irs-featured-items {
+    width: 60%;
+    float: left;
+  }
+
+  .USAJobs.block.homepage.refresh {
+    .views-row {
+      position: relative;
+      width: 100%;
+      float: none;
+      max-width: 100%;
+
+      .views-field-views-conditional {
+        width: 70%;
+      }
+
+      .views-field-title {
+        width: 70%;
+      }
+
+      .views-field-body {
+        width: 70%;
+      }
+
+      .views-field-nothing-1 {
+        display: none;
+      }
+
+      .views-field-nothing {
+        a.button {
+          padding: 0.5em;
+          display: inline-block;
+          width: 20%;
+          position: absolute;
+          right: 10px;
+          top: 40px;
+          text-align: center;
+        }
+
+        a.button.irs-share-link {
+          top: 95px;
+        }
+      }
+    }
+  }
+
+  .irs-block-life-at-irs {
+    width: 35%;
+    float: right;
+
+    h2.block__title {
+      font-size: 34px !important;
+      padding-left: 10px;
+    }
+
+    .irs-inner-block {
+      background-image: url('/sites/default/themes/irsjobs/images/life-at-the-IRS-blog.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      padding: 20px;
+      color: #fff;
+      margin: 0 1em;
+      height: 350px;
+
+      a {
+        text-transform: uppercase;
+        color: #fff !important;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 20px;
+      }
+    }
+  }
+}

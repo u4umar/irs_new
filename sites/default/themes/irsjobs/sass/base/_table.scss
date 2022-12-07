@@ -1,0 +1,32 @@
+// Table
+//
+// Default, unstyled system table treatement.
+//
+// Markup:
+// <table class="{{modifier_class}}">
+//   <thead>
+//     <tr><th>Header 1</th><th>Header 2</th></tr>
+//   </thead>
+//   <tbody>
+//     <tr><td>Content 1</td><td>Content 2</td></tr>
+//     <tr><td>Content 1</td><td>Content 2</td></tr>
+//   </tbody>
+// </table>
+//
+// Styleguide Base Elements.Table
+
+/* Variables */
+$table-margin: 2em;
+$table-width: 100%;
+$table-head-align: left;
+
+/* Selectors and Structure */
+table {
+  min-width: $table-width;
+  margin: 0 0 $table-margin;
+}
+
+th {
+  background: transparent;
+  text-align: $table-head-align;
+}

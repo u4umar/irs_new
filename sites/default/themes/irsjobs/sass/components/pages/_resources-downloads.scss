@@ -1,0 +1,20 @@
+// Downloads Page
+//
+// No styleguide reference.
+.page-node-38 .node__content ul {
+  column-count: 3;
+  column-gap: 2em;
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  @include media($tablet) {
+    column-count: 2;
+  }
+
+  @include media($phone) {
+    column-count: 1;
+    column-gap: 0;
+  }
+}

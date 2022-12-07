@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Salary Table feature.
+ */
+
+include_once 'salary_table.features.inc';

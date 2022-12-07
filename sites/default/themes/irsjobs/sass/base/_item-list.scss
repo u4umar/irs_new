@@ -1,0 +1,40 @@
+.item-list ul.pager {
+  margin-bottom: 2em;
+  position: relative;
+  color: $color-white;
+
+  li,
+  li.pager-current {
+    margin: 0 1em;
+    padding: 0;
+
+    color: $color-white;
+    font-family: $secondary-font;
+    font-weight: normal;
+
+    a {
+      padding: 1em;
+
+      background: $primary-black;
+      border-radius: 0.25em;
+
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  li.pager-current {
+    padding: 1em;
+    background: #adadab;
+    border-radius: 0.25em;
+  }
+
+  li.first,
+  li.last {
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

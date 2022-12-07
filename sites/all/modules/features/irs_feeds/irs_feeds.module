@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the IRS Feeds feature.
+ */
+
+include_once 'irs_feeds.features.inc';

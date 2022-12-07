@@ -1,0 +1,9 @@
+// About Us Featured Pages Block
+//
+// Removes the block border on mobile devices set for all blocks in the main
+// section.
+//
+// No styleguide reference.
+.section--main .zone--content .block--views-basic-pages-block-5 {
+  @include hide-block-border;
+}

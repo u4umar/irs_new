@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Download feature.
+ */
+
+include_once 'download.features.inc';

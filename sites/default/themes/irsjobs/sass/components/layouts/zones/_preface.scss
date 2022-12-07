@@ -1,0 +1,13 @@
+// Preface Zone
+//
+// No styleguide reference.
+.zone-wrapper--preface {
+  padding: 4em 0;
+  background: $color-white-dark;
+  border-bottom: 0.5em solid #d1d1cf;
+
+  @include media($tablet) {
+    padding: 0;
+    border: 0;
+  }
+}

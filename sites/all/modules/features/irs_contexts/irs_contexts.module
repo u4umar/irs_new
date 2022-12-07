@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the IRS Contexts feature.
+ */
+
+include_once 'irs_contexts.features.inc';

@@ -1,0 +1,123 @@
+name = IRS Careers Website
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = dist/css/irsjobs.styles.css
+stylesheets[all][] = dist/css/irsjobs.user-edit.css
+stylesheets[all][] = libraries/fontawesome/css/font-awesome.min.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = dist/js/irsjobs.behaviors.js
+scripts[] = libraries/matchHeight/jquery.matchHeight-min.js
+
+; ========================================
+; Regions
+; ========================================
+regions[page_top] = Page Top
+regions[user_first] = User Bar First
+regions[user_second] = User Bar Second
+regions[branding] = Branding
+regions[navigation] = Navigation
+regions[header_first] = Header First
+regions[header_second] = Header Second
+regions[preface_first] = Preface First
+regions[preface_second] = Preface Second
+regions[preface_third] = Preface Third
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[sidebar_first] = Sidebar First
+regions[content] = Content
+regions[sidebar_second] = Sidebar Second
+regions[postscript_first] = Postscript First
+regions[postscript_second] = Postscript Second
+regions[postscript_third] = Postscript Third
+regions[postscript_fourth] = Postscript Fourth
+regions[footer_first] = Footer First
+regions[footer_second] = Footer Second
+regions[page_bottom] = Page Bottom
+
+; ========================================
+; Settings
+; ========================================
+settings[toggle_logo] = 1
+settings[toggle_name] = 1
+settings[toggle_slogan] = 0
+settings[toggle_node_user_picture] = 1
+settings[toggle_comment_user_picture] = 1
+settings[toggle_comment_user_verification] = 1
+settings[toggle_favicon] = 1
+settings[toggle_main_menu] = 0
+settings[toggle_secondary_menu] = 0
+settings[omega_toggle_front_page_content] = 1
+settings[default_logo] = 0
+settings[logo_path] = public://IRS-Logo_1.png
+settings[logo_upload] = ""
+settings[default_favicon] = 0
+settings[favicon_path] = sites/default/files/favicon.ico
+settings[favicon_upload] = ""
+settings[omega_enable_warning] = 1
+settings[omega_toggle_extension_assets] = 1
+settings[omega_libraries][selectivizr][status] = 1
+settings[omega_libraries][selectivizr][variant] = _default
+settings[omega_libraries][respond][status] = 1
+settings[omega_libraries][respond][variant] = _default
+settings[omega_libraries][pie][status] = 1
+settings[omega_libraries][pie][variant] = _default
+settings[omega_libraries][pie][selectors][] = .block--views-exp-usajobs-page-1, .block--views-exp-usajobs-page-2, .block--views-exp-usajobs-page-3, .block--views-exp-usajobs-page-4
+settings[omega_libraries][pie][selectors][] = .block--views-exp-gs-schedules-page
+settings[omega_libraries][html5shiv][status] = 1
+settings[omega_libraries][html5shiv][variant] = _default
+settings[omega_toggle_extension_development] = 0
+settings[omega_enable_export_reminder] = 1
+settings[omega_rebuild_theme_registry] = 1
+settings[omega_rebuild_aggregates] = 1
+settings[omega_browser_width_indicator] = 1
+settings[omega_livereload] = 1
+settings[omega_livereload_script] = http://localhost:35729/livereload.js
+settings[omega_livereload_host] = localhost
+settings[omega_livereload_port] = 35729
+settings[omega_demo_regions] = 0
+settings[omega_demo_regions_list][user_first] = user_first
+settings[omega_demo_regions_list][user_second] = user_second
+settings[omega_demo_regions_list][branding] = branding
+settings[omega_demo_regions_list][navigation] = navigation
+settings[omega_demo_regions_list][highlighted] = highlighted
+settings[omega_demo_regions_list][help] = help
+settings[omega_demo_regions_list][sidebar_first] = sidebar_first
+settings[omega_demo_regions_list][content] = content
+settings[omega_demo_regions_list][sidebar_second] = sidebar_second
+settings[omega_demo_regions_list][footer_first] = footer_first
+settings[omega_demo_regions_list][footer_second] = footer_second
+settings[omega_demo_regions_list][header_first] = 0
+settings[omega_demo_regions_list][header_second] = 0
+settings[omega_demo_regions_list][preface_first] = 0
+settings[omega_demo_regions_list][preface_second] = 0
+settings[omega_demo_regions_list][preface_third] = 0
+settings[omega_demo_regions_list][postscript_first] = 0
+settings[omega_demo_regions_list][postscript_second] = 0
+settings[omega_demo_regions_list][postscript_third] = 0
+settings[omega_demo_regions_list][postscript_fourth] = 0
+settings[omega_toggle_extension_compatibility] = 1
+settings[omega_conditional_classes_html] = 1
+settings[omega_apple_touch] = 1
+settings[omega_cleartype] = 1
+settings[omega_handheld_friendly] = 1
+settings[omega_mobile_optimized] = 1
+settings[omega_viewport] = 1
+settings[omega_viewport_initial_scale] = _default
+settings[omega_viewport_user_scaleable] = 1
+settings[omega_viewport_minimum_scale] = _default
+settings[omega_viewport_maximum_scale] = _default
+settings[omega_chrome_edge] = 1
+settings[omega_internet_explorer_support] = _none
+settings[omega_toggle_extension_layouts] = 1
+settings[omega_layout] = default
+settings[favicon_mimetype] = image/vnd.microsoft.icon

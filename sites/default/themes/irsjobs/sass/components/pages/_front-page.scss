@@ -1,0 +1,48 @@
+// Front Page
+//
+// Rules that only apply to the site front page.
+//
+// No styleguide reference.
+.front {
+  .zone-wrapper--header {
+    position: relative;
+    top: -0.5em;
+  }
+
+  // Ignore grid system on front page for Showcase slider
+  .zone--header,
+  .region--header-first {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .zone--header {
+    max-width: none;
+  }
+
+  .region--header-first {
+    float: none;
+  }
+
+  // Specify h1 to prevent conflict with flexslider slide titles
+  .zone--header h1.title {
+    display: none;
+  }
+
+  .section--main h2 {
+    color: $primary-black;
+    font-weight: $font-bold;
+    margin: 0 0 .5em;
+  }
+
+  .section--main .node {
+    @include hide-block-border;
+  }
+
+  @include media($tablet) {
+    .section--header {
+      background-color: $primary-white;
+    }
+  }
+}

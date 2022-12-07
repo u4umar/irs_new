@@ -1,0 +1,70 @@
+// Global Navigation Menu
+//
+// User section global navigation menu.
+//
+// Markup:
+// <nav id="block-menu-block-2"
+//      role="navigation"
+//      class="block block--menu-block block--menu-block-2">
+//   <h2 class="block__title">Global Navigation</h2>
+//   <div class="menu-block-wrapper menu-block-2 menu-name-menu-global-navigation">
+//     <ul class="menu">
+//       <li><a href="#">Item 1</a></li>
+//       <li><a href="#">Item 2</a></li>
+//       <li><a href="#">Item 3</a></li>
+//       <li><a href="#">Item 4</a></li>
+//     </ul>
+//   </div>
+// </nav>
+//
+// Styleguide Components.Menus.GlobalNav
+
+// Variables
+$default-color: #4c4c4b;
+
+// Selectors and Structure
+#block-menu-block-2 {
+  font-size: 1rem;
+
+  .block__title {
+    @include hide-block-title;
+  }
+
+  ul.menu {
+    @include unstyled-list;
+
+    display: block;
+    text-align: right;
+
+    li {
+      display: inline;
+      color: $default-color;
+
+      a {
+        padding: 0 0.5em;
+        color: $default-color;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+          color: $primary-black;
+        }
+      }
+
+      &::after {
+        content: "|";
+      }
+
+      &:last-child {
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  @include media($tablet) {
+    display: none;
+  }
+}

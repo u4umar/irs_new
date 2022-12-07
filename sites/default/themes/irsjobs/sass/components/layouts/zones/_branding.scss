@@ -1,0 +1,23 @@
+// Branding Zone
+//
+// No styleguide reference.
+
+// Variables
+$border-color-fallback: #bfbfbf;
+
+// Selectors and Structure
+.zone-wrapper--branding {
+  padding: 2em 0 0;
+  border-bottom: 5px solid $border-color-fallback;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+
+  position: relative;
+  z-index: 2;
+
+  // All blocks in the branding zone should be hidden on mobile devices, so
+  // no media queries are needed for the regions in this zone.
+  @include media($tablet) {
+    padding: 0;
+    border: 0;
+  }
+}

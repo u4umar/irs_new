@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>*Icon / Chevron / Down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M24.75,22 L23.3016667,22 L22.7883333,21.505 C24.9883333,18.9383333 26.125,15.4366667 25.5016667,11.715 C24.64,6.61833333 20.3866667,2.54833333 15.2533333,1.925 C7.49833333,0.971666667 0.971666667,7.49833333 1.925,15.2533333 C2.54833333,20.3866667 6.61833333,24.64 11.715,25.5016667 C15.4366667,26.125 18.9383333,24.9883333 21.505,22.7883333 L22,23.3016667 L22,24.75 L29.7916667,32.5416667 C30.5433333,33.2933333 31.7716667,33.2933333 32.5233333,32.5416667 C33.275,31.79 33.275,30.5616667 32.5233333,29.81 L24.75,22 Z M13.75,22 C9.185,22 5.5,18.315 5.5,13.75 C5.5,9.185 9.185,5.5 13.75,5.5 C18.315,5.5 22,9.185 22,13.75 C22,18.315 18.315,22 13.75,22 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IRS-Find-a-Job-Landing-Page---Annotations" transform="translate(-257.000000, -1913.000000)">
+            <g id="*-/-Icon-/-Search" transform="translate(252.000000, 1908.000000)">
+                <g id="search">
+                    <polygon id="Path" points="0 0 44 0 44 44 0 44"></polygon>
+                    <g id="✱-/-Color-/-Light-Blue" transform="translate(3.666667, 3.666667)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <g id="✱-/-Color-/-White" mask="url(#mask-2)" fill="#FFFFFF">
+                            <g transform="translate(-9.166667, -9.166667)" id="Rectangle-13">
+                                <rect x="0" y="0" width="55" height="55" rx="10"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

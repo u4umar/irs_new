@@ -1,0 +1,226 @@
+// Application Process Slider
+//
+// No styleguide reference.
+
+// Block Container
+.block--views-61ab2ff73e40fb5ed58ca8696f797b83 {
+  font-size: 1rem;
+}
+
+// View
+.view.application-process-flex-slider .view-content {
+  @include media($tablet) {
+    padding: 3em 0;
+    background: $primary-white;
+  }
+}
+
+.application-process.block.application-process-flex-slider .flexslider {
+  position: relative;
+  padding-top: 6.8em;
+
+  .flex-viewport {
+    padding-top: 2em;
+
+    .slides {
+      .icon-thumbnail {
+        float: left;
+        margin: 0 4em 4em 0;
+      }
+
+      .title {
+        margin-bottom: 1em;
+
+        color: $primary-black;
+        font-size: 2.4em;
+        font-family: $primary-font;
+        font-weight: $font-bold;
+        text-transform: capitalize;
+      }
+
+      .summary {
+        color: $primary-black;
+        font-size: 1.4em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        line-height: 1.75em;
+      }
+
+      .learn-more {
+        color: $primary-blue;
+        font-size: 1.2em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        text-transform: uppercase;
+
+        a {
+          color: $primary-blue;
+          font-weight: normal;
+          text-decoration: none;
+
+          &::after {
+            content: ">";
+            padding-left: 0.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .flex-control-paging {
+    height: 4.8em;
+    position: absolute;
+    top: 0;
+
+    li {
+      margin: 0 2.4em;
+
+      a {
+        width: 2em;
+        height: 2em;
+
+        border-radius: 2em;
+        background: #ccc;
+
+        color: $primary-black;
+        font-size: 2.4em;
+        font-family: $primary-font;
+        font-weight: 700;
+        line-height: 2em;
+        text-indent: 0;
+        text-align: center;
+      }
+
+      a.flex-active {
+        color: $color-white;
+        background: $primary-blue;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    .flex-viewport .slides li {
+      position: relative;
+
+      .icon-thumbnail {
+        margin: 6em 0 4em;
+        float: none;
+
+        img {
+          width: initial;
+          margin: 0 auto;
+        }
+      }
+
+      .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        line-height: 100%;
+        text-align: center;
+      }
+
+      .title,
+      .summary,
+      .learn-more {
+        margin: 0 2em;
+      }
+    }
+
+    .flex-control-paging {
+      padding: 0 3em;
+
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 0 5%;
+      }
+    }
+  }
+}
+
+.no-js .application-process.block.application-process-flex-slider .flexslider .slides {
+  // Overwrite default library no-js display behavior
+  > li {
+    margin-bottom: 4em;
+    display: block;
+    clear: both;
+
+    &::before {
+      content: "1";
+      width: 2em;
+      height: 2em;
+
+      margin-top: 4em;
+      margin-bottom: 1em;
+
+      border-radius: 2em;
+      display: block;
+      background: #ccc;
+
+      color: $primary-black;
+      font-size: 2.4em;
+      font-family: $primary-font;
+      font-weight: $font-bold;
+      line-height: 2em;
+      text-align: center;
+    }
+
+    &:nth-child(2)::before {
+      content: "2";
+    }
+
+    &:nth-child(3)::before {
+      content: "3";
+    }
+
+    &:nth-child(4)::before {
+      content: "4";
+    }
+  }
+
+  .icon-thumbnail {
+    float: left;
+    margin: 0 4em 4em 0;
+  }
+
+  .title {
+    margin-bottom: 1em;
+
+    color: $primary-black;
+    font-size: 2.4em;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+    text-transform: capitalize;
+  }
+
+  .summary {
+    color: $primary-black;
+    font-size: 1.4em;
+    font-family: $secondary-font;
+    font-weight: normal;
+    line-height: 1.75em;
+  }
+
+  .learn-more {
+    color: $primary-blue;
+    font-size: 1.2em;
+    font-family: $secondary-font;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    a {
+      color: $primary-blue;
+      font-weight: normal;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        padding-left: 0.5em;
+      }
+    }
+  }
+}

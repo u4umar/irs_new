@@ -1,0 +1,11 @@
+# Ignore configuration files that may contain sensitive information.
+settings*.php
+
+# Ignore paths that contain user-generated content.
+files/css
+files/js
+files/less
+.backup/backup.sh
+.backup/cleanup.sh
+.migrate
+.ssh

@@ -1,0 +1,5 @@
+name = "IRS Careers Calculators"
+description = "Provide functionality for the IRS careers website"
+package = "IRS Careers"
+
+core = 7.x

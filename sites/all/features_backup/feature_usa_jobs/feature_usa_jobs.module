@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the USA Jobs feature.
+ */
+
+include_once 'feature_usa_jobs.features.inc';

@@ -1,0 +1,132 @@
+// Social Media Menu
+//
+// Menu containing links to all social media accounts.
+//
+// Markup:
+// <nav role="navigation" class="block block--menu block--menu-menu-social-media-navigation">
+//   <h2 class="block__title">Connect with IRS</h2>
+//   <ul class="menu">
+//     <li><a href="#" id="twitter">Twitter</a></li>
+//     <li><a href="#" id="facebook">Facebook</a></li>
+//     <li><a href="#" id="youtube">YouTube</a></li>
+//     <li><a href="#" id="linkedin">LinkedIn</a></li>
+//     <li><a href="#" id="govloop">GovLoop</a></li>
+//   </ul>
+// </nav>
+//
+// Styleguide Components.Menus.SocialMedia
+.block--menu-menu-social-media-navigation {
+  @include clearfix;
+  font-size: 1rem;
+
+  .block__title {
+    margin: 0;
+    float: left;
+
+    color: #4b5056;
+    font-size: 1.8em;
+    font-weight: $font-bold;
+    font-family: $primary-font;
+    line-height: 1.5em;
+  }
+
+  .menu {
+    @include unstyled-list;
+
+    margin: 0 0 0 1em;
+    border: 0;
+
+    float: left;
+    display: block;
+    text-align: right;
+
+    li {
+      margin: 0 1em 0 0;
+      float: left;
+      display: block;
+      overflow: hidden;
+
+      border-radius: 0.25em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Button and sprite styling
+  .menu li a {
+    margin: 0;
+    padding: 0.75em 1.5em 0.75em 3em;
+
+    display: block;
+    color: $color-white;
+    background: #4b5056 url(../../images/icons/sprite-social.png) 0 0 no-repeat;
+
+    font-family: $secondary-font;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #3b5999;
+    }
+
+    &#facebook {
+      background-position: 0 -30px;
+    }
+
+    &#youtube {
+      background-position: 0 -60px;
+    }
+
+    &#linkedin, &#linkedin-cc {
+      background-position: 0 -90px;
+    }
+
+    &#govloop {
+      background-position: 0 -120px;
+    }
+
+    &#linkedin-cc {
+      display: none;
+    }
+  }
+
+  @include media($tablet) {
+    .block__title {
+      @include hide-block-title;
+    }
+
+    .menu {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+
+      li {
+        width: 30%;
+        min-width: 10em;
+        margin: 1em 1em 0 0;
+
+        &:last-child {
+          margin: 1em 0 0;
+        }
+      }
+    }
+  }
+
+  @include media($footer-phone) {
+    .menu {
+      justify-content: center;
+      flex-wrap: wrap;
+
+      li {
+        max-width: 11.5em;
+      }
+    }
+  }
+}

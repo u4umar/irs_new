@@ -1,0 +1,275 @@
+// Mobile Navigation Block
+//
+// Header, sliding panel, and search dropdown for mobile devices. The
+// corresponding markup is generated using JavaScript.
+//
+// No styleguide reference.
+
+// Variables
+$border-color: #979797;
+
+$mobile-nav-header-height: 90px;
+$mobile-nav-header-background: #f6f6f4;
+$mobile-nav-header-border: #9b9b9b;
+$mobile-nav-header-color: #446ca3;
+$mobile-nav-header-btn-color: $primary-blue;
+$mobile-nav-header-btn-background: $color-white;
+$mobile-nav-search-border: $border-color;
+
+$sliding-panel-background: #d1d1d1;
+$sliding-panel-color: $primary-black;
+$sliding-panel-border-color: #9b9b9b;
+$sliding-panel-background-hover: darken($color-white-dark, 5%);
+
+$search-form-animation-duration: 0.3s;
+$search-form-animation-timing-fn: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// Selectors and Structure
+.block--mobile-navigation {
+  @include clearfix;
+  font-size: 1rem;
+
+  width: 100%;
+  max-height: $mobile-nav-header-height;
+
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+  text-align: center;
+
+  .block--mobile-navigation__header {
+    padding: 2.4em 1.5em;
+    border-bottom: 0.2em solid $mobile-nav-header-border;
+    background: $mobile-nav-header-background;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  // Slideout Navigation Panel
+  .sliding-panel-content {
+    @include size(80% 100%);
+    @include position(fixed, 0px auto 0px 0px);
+    @include transform(translateX(-100%));
+    @include transition(all 0.25s linear);
+
+    background: $sliding-panel-background;
+    z-index: 5;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    // Core Navigation
+    > ul.menu {
+      @include unstyled-list;
+
+      // General Link Styles
+      li {
+        border-bottom: 1px solid $sliding-panel-border-color;
+
+        &:last-child {
+          border-bottom: 0.5em solid $sliding-panel-border-color;
+        }
+
+        a {
+          padding: 0.75em 1em;
+
+          display: block;
+          position: relative;
+          background: $color-white-dark;
+
+          color: $sliding-panel-color;
+          font-size: 2em;
+          text-decoration: none;
+
+          &::before {
+            content: "";
+            width: 2em;
+            display: inline-block;
+          }
+
+          &:focus,
+          &:hover {
+            background-color: $sliding-panel-background-hover;
+          }
+        }
+      }
+
+      // First Level Links with Children
+      li.expanded {
+        // Child Menus
+        ul.menu {
+          @include size(100% 100%);
+          @include position(fixed, 0px auto 0px 0px);
+          @include transform(translateX(-100%));
+          @include transition(all 0.25s linear);
+
+          padding: 0;
+          display: block;
+          z-index: 1;
+          background: $sliding-panel-background;
+
+          // Nth Level Links
+          li {
+            display: block;
+            width: 100%;
+          }
+
+          // Back to Parent Menu Link
+          li a.back-nav {
+            background: $sliding-panel-background-hover;
+
+            &::before {
+              content: '\f060';
+              font-family: FontAwesome;
+            }
+          }
+        }
+      }
+    }
+
+    // Menu Slideout Transforms for First Level and Nth-Level Menus
+    &.is-visible,
+    > ul.menu li.expanded.is-visible > ul.menu {
+      @include transform(translateX(0));
+    }
+  }
+
+  // Panel Close Button
+  .sliding-panel-close {
+    width: 100%;
+    padding: 1em;
+    border: 0;
+
+    background: $mobile-nav-header-background;
+    text-align: right;
+
+    i {
+      color: $mobile-nav-header-btn-color;
+      font-size: 2.625em;
+      line-height: 1em;
+    }
+
+    span {
+      width: 0;
+      display: inline-block;
+      @include hide-text;
+    }
+  }
+
+  // Page Overlay
+  .sliding-panel-fade-screen {
+    @include position(fixed, 0px 0px 0px 0px);
+    @include transition;
+
+    z-index: 4;
+    background: black;
+    opacity: 0;
+    visibility: hidden;
+
+    &.is-visible {
+      opacity: 0.6;
+      visibility: visible;
+    }
+  }
+
+  .sliding-panel-button,
+  .mobile-branding,
+  .mobile-branding .site-logo,
+  .search-form-button {
+    display: inline-block;
+  }
+
+  .sliding-panel-button,
+  .mobile-branding,
+  .search-form-button {
+    vertical-align: bottom;
+  }
+
+  // Header Buttons
+  .search-form-button,
+  .sliding-panel-button {
+    @include size(4em 4em);
+
+    padding: 0.5em;
+    border: 1px solid $mobile-nav-header-border;
+
+    border-radius: 0.4em;
+    background: $mobile-nav-header-btn-background;
+
+    cursor: pointer;
+    color: $mobile-nav-header-btn-color;
+    font-family: $secondary-font;
+    font-weight: $font-normal;
+
+    i {
+      font-size: 2.625em;
+      line-height: 1em;
+    }
+
+    span {
+      display: block;
+      @include hide-text;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .sliding-panel-button {
+    float: left;
+  }
+
+  .search-form-button {
+    float: right;
+  }
+
+  // Form Dropdown Container
+  .mobile-search-form-container {
+    width: 100%;
+    padding: 1em;
+    border-bottom: 1px solid $mobile-nav-search-border;
+
+    background: $mobile-nav-header-background;
+    display: block;
+    overflow: auto;
+
+    // Slide out animation
+    transform: translateY(-100%);
+    transition: transform $search-form-animation-duration $search-form-animation-timing-fn;
+
+    form {
+      input.form-text {
+        width: 100%;
+
+        padding: 0.5em;
+        border: 1px solid $mobile-nav-search-border;
+        border-radius: 0.75em;
+
+        font-size: 1.5em;
+        font-family: $default-font;
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+
+      input[type="submit"] {
+        display: none;
+      }
+    }
+
+    &.is-visible {
+      transform: translateY(0);
+    }
+  }
+
+  @include media($tablet) {
+    display: block;
+  }
+}

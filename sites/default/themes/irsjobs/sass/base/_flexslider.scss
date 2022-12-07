@@ -1,0 +1,30 @@
+// Flexslider (Defaults)
+
+/* Selectors and Structure */
+.flexslider {
+  margin: 0;
+  border: none;
+  background: transparent;
+
+  border-radius: 0;
+  box-shadow: none;
+
+  .slides > li {
+    margin: 0;
+  }
+
+  .flex-control-nav {
+    position: relative;
+    bottom: 0;
+  }
+
+  .flex-direction-nav {
+    a {
+      height: 6rem;
+    }
+
+    .flex-nav-prev {
+      left: -10rem;
+    }
+  }
+}

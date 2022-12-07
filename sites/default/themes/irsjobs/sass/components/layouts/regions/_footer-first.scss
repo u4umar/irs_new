@@ -1,0 +1,8 @@
+.region--footer-first {
+  padding: 2em 1em;
+
+  @include media($tablet) {
+    margin: 0 0 2em;
+    padding: 0 2em;
+  }
+}

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Tests helper function for the tagging.
+ */
+class RulesAutoTagUnitTest extends DrupalUnitTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Rules Autotag Unit Test',
+      'description' => "Tests helper function for the tagging.",
+      'group' => 'Rules Autotag',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp();
+    require_once __DIR__ . '/rules_autotag.module';
+  }
+
+  /**
+   * Test splitting a text.
+   */
+  public function testSplitText() {
+    $term = "hello, world, . ";
+    $split = rules_autotag_split_text($term);
+    $this->assertEqual(['hello', 'world'], $split, 'The term "' . $term . '" was split incorrectly: ["' . implode('"], ["', $split) . '"]');
+  }
+
+  /**
+   * Test whether a term starting with 0 is split correctly.
+   */
+  public function testZeroTermSplit() {
+    $term = "0 years";
+    $split = rules_autotag_split_text($term);
+    $this->assertEqual(['0', 'years'], $split, 'The term "0 years" was split incorrectly: ["' . implode('"], ["', $split) . '"]');
+  }
+}

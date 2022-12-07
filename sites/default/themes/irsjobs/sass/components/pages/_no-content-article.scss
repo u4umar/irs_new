@@ -1,0 +1,22 @@
+// No Content Article Page
+//
+// A page where the content article is empty
+//
+// Some pages do not contain any main content in favor of blocks.
+// Thus, the padding, margin, and border for the empty element needs to be
+// removed.
+//
+// Node 47  = Regional Offices    (/about/locations/regional-offices)
+// Node 610 = Employment Offices  (/about/locations/employment-offices)
+// Node 611 = Application Process (/application-process)
+//
+// No styleguide reference.
+.page-node-47,
+.page-node-610,
+.page-node-611 {
+  article.node {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}

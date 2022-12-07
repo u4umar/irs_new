@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_disable().
+ *
+ * Clean mefibs from all views display extenders to prevent errors.
+ * @see https://www.drupal.org/node/2599788
+ */
+function mefibs_disable() {
+  $views = views_get_all_views();
+  foreach ($views as $view) {
+    if (!isset($view->display_handler->extender['mefibs'])) {
+      continue;
+    }
+    unset($view->display_handler->extender['mefibs']);
+    views_save_view($view);
+  }
+}
+
+/**
+ * Implements hook_enable().
+ *
+ * Rebuild the views plugin cache. In case mefibs had been configured
+ * previously, then disabled and now re-enabled, this will cause the display
+ * extender to be registered so that views with mefibs settings will
+ * immediately work the same as before.
+ */
+function mefibs_enable() {
+  views_include('cache');
+  _views_fetch_plugin_data($type = NULL, $plugin = NULL, $reset = TRUE);
+}
+

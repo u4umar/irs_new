@@ -1,0 +1,16 @@
+// Workbench Module Block
+//
+// Drupal module that displays messages for administrators.
+//
+// No styleguide reference.
+#block-workbench-block {
+  @include hide-block-border;
+
+  margin: 1em 0;
+
+  .workbench-info-block {
+    padding: 1em;
+    font-size: 1.2rem;
+  }
+
+}

@@ -1,0 +1,40 @@
+// About Us Overview Subpage List
+.view.about-us.featured-pages {
+  @include styled-overview-list;
+
+  margin: 2em 0;
+
+  // List of subpages on card backface
+  .card .face.back .view-content ul.menu-list {
+    @include clearfix;
+
+    height: 125px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    li.menu {
+      width: 100%;
+      margin: 0 0 1em;
+
+      display: block;
+      text-align: left;
+    }
+
+    li.menu a {
+      color: $color-white;
+      font-size: 1.2em;
+      font-family: $secondary-font;
+      font-weight: 300;
+      text-decoration: none;
+
+      &::after {
+        content: ">";
+        padding-left: 1em;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    margin: 0;
+  }
+}

@@ -1,0 +1,12 @@
+// Office Locations Blocks
+//
+// Removes the block border on mobile set for all blocks in the main section.
+//
+// No styleguide referecne.
+.section--main .zone--content {
+  // Regional Office List, Employment Offices List
+  .block--views-office-locations-block-2,
+  .block--views-office-locations-block-3 {
+    @include hide-block-border;
+  }
+}

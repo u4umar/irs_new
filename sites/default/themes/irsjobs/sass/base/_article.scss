@@ -1,0 +1,289 @@
+// Node Article
+//
+// Default styling for article elements used for node content.
+//
+// Markup:
+// <article role="article" class="node">
+//   <div class="node__content">
+//     <div class="field field--name-body">
+//       <div class="field__items">
+//         <div class="field__item even" property="content:encoded">
+//           <h1>Heading 1</h1>
+//           <h2>Heading 2</h2>
+//           <h3>Heading 3</h3>
+//           <h4>Heading 4</h4>
+//           <h5>Heading 5</h5>
+//           <h6>Heading 6</h6>
+//           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+//           <p>
+//             <strong>Bold</strong>
+//             <em>Italics</em>
+//             <u>Underline</u>
+//             <strike>Strike-through</strike>
+//             Sub<sub>script</sub>
+//             Super<sup>script</sup>
+//           </p>
+//           <p><a href="#">Link</a></p>
+//           <p><a id="anchor" name="anchor"></a>Text Anchor</p>
+//          <blockquote>
+//            <h1>Heading 1</h1>
+//            <h2>Heading 2</h2>
+//            <h3>Heading 3</h3>
+//            <h4>Heading 4</h4>
+//            <h5>Heading 5</h5>
+//            <h6>Heading 6</h6>
+//            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+//          </blockquote>
+//          <p>Ordered List</p>
+//          <ol>
+//            <li>One</li>
+//            <li>Two</li>
+//          </ol>
+//          <p>Unordered List</p>
+//          <ul>
+//            <li>One</li>
+//            <li>Two</li>
+//          </ul>
+//          <hr>
+//          <p>Drupal Indentation</p>
+//          <p class="rteindent1">Indent 1</p>
+//          <p class="rteindent2">Indent 2</p>
+//          <p class="rteindent3">Indent 3</p>
+//          <p class="rteindent4">Indent 4</p>
+//          <br/>
+//          <p>Preformatted text</p>
+//          <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</pre>
+//          <br/>
+//          <p>Address</p>
+//          <address>12345 Some Road Road</address>
+//          <br/>
+//          <p>Table</p>
+//          <table summary="Summary" height="80" border="1" cellpadding="1" cellspacing="1" width="398">
+//            <caption>Caption</caption>
+//            <thead>
+//              <tr>
+//                <th>Column 1</th>
+//                <th>Column 2</th>
+//              </tr>
+//            </thead>
+//            <tbody>
+//              <tr>
+//                <td>W</td>
+//                <td>X</td>
+//              </tr>
+//              <tr>
+//                <td>Y</td>
+//                <td>Z</td>
+//              </tr>
+//            </tbody>
+//          </table>
+//          <br/>
+//          <p>Image</p>
+//          <p>
+//            <img src="../screenshot.png">
+//          </p>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </article>
+//
+// Styleguide Base Elements.NodeArticle
+
+// Variables
+$table-head-background: #f1f1f1;
+
+// Selectors and Structure
+article.node {
+  font-size: 1.6rem;
+
+  // Headings
+  h2, h3, h4, h5, h6 {
+    margin: 1em 0 0.5em 0;
+    font-family: $primary-font;
+    font-weight: $font-normal;
+    line-height: 1.25em;
+  }
+
+  h3, h4, h5 {
+    font-weight: $font-bold;
+  }
+
+  h1 {
+    font-size: 2.5714em; // 36px / 14px
+  }
+
+  h2 {
+    font-size: 2em; // 28px / 14px
+  }
+
+  h3 {
+    font-size: 1.5em; // 21px / 14px
+  }
+
+  h4 {
+    font-size: 1em; // 14px / 14px
+  }
+
+  h5, h6 {
+    font-size: 1.072em; // 15px / 14px
+  }
+
+  h6 {
+    text-transform: uppercase;
+  }
+
+  // Paragraphs
+  p {
+    margin: 1em 0;
+
+    font-size: 1em;
+    font-family: $primary-font;
+    line-height: 1.75em;
+  }
+
+  // Links
+  a:link,
+  a:visited {
+    color: $color-blue;
+    text-decoration: none;
+  }
+
+  a:link {
+    &:hover,
+    &:active {
+      color: $primary-black;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  }
+
+  // Lists
+  ul,
+  ol {
+    margin: 1em 0 1em 2em;
+    padding: 0 0 0 1.2em;
+
+    font-size: 1em;
+    font-family: $primary-font;
+    line-height: 1.75em;
+
+    li {
+      margin: 0;
+      line-height: 1.75em;
+    }
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  // Table
+  table,
+  table p {
+    font-size: rem(14px);
+    font-family: $default-font;
+    line-height: 1.75em;
+  }
+
+  table thead tr,
+  table > caption {
+    background: darken($table-head-background, 5%);
+  }
+
+  table th,
+  table td,
+  table > caption {
+    padding: 1em .75em;
+    text-align: left;
+    border: 1px solid transparent;
+    border-bottom: 1px solid darken($table-head-background, 5%);
+  }
+
+  table th {
+    color: darken($table-head-background, 66%);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  table tbody {
+    background: $color-white;
+
+    p {
+      margin: 0 0 1em;
+    }
+  }
+
+  table tbody tr {
+    &:nth-child(even) {
+      background-color: lighten(#639dc0, 34%);
+    }
+  }
+
+  // Horizontal Line
+  hr {
+    background: #ccc;
+  }
+
+  // Blockquote
+  blockquote {
+    padding-left: 2em;
+    border-left: 5px solid $primary-blue
+  }
+
+  // Preformatted
+  pre {
+    display: inline-block;
+  }
+
+  // Indentation
+  .rteindent1 {
+    margin-left: 2em;
+  }
+
+  .rteindent2 {
+    margin-left: 4em;
+  }
+
+  .rteindent3 {
+    margin-left: 6em;
+  }
+
+  .rteindent4 {
+    margin-left: 8em;
+  }
+
+  @include media($tablet) {
+    margin: 0 0 4.2857em; // 0 0 60px
+    padding: 2.857em 1.428em 0; // 40px 20px 0
+
+    p,
+    ul,
+    ol {
+      font-size: 1.214em; // 17px
+    }
+
+    p,
+    ul,
+    ol,
+    ul li,
+    ol li {
+      line-height: 1.3em;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+name = Browser Class
+description = Adds a browser class to the body tag.
+core = 7.x
+configure = admin/config/user-interface/browserclass
+php = 5.4
+
+; Information added by Drupal.org packaging script on 2020-06-11
+version = "7.x-1.9"
+core = "7.x"
+project = "browserclass"
+datestamp = "1591912676"

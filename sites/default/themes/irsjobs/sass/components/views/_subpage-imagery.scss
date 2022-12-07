@@ -1,0 +1,42 @@
+// Subpage Imagery Header
+//
+// No styleguide reference.
+.view.subpage-imagery {
+  position: relative;
+
+  .views-field {
+    .field-content {
+      //min-height: 205px;
+      overflow-y: hidden;
+      position: relative;
+    }
+
+    a {
+      display: block
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    //&::after {
+    //  content: "";
+    //  width: 100%;
+    //  height: 98%;
+    //
+    //  display: block;
+    //  z-index: 1;
+    //
+    //  position: absolute;
+    //  top: 0;
+    //  //background:
+    //  //  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIW2NkQAOMUL4klH6OUwCuEQA3fgIFsos6TgAAAABJRU5ErkJggg==)
+    //  //  repeat;
+    //}
+  }
+
+  //@include media($tablet) {
+  //  display: none;
+  //}
+}

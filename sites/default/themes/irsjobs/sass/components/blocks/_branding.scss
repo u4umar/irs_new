@@ -1,0 +1,32 @@
+// Branding
+//
+// Site logo, title, and slogan.
+//
+// Markup:
+// <a href="/" title="Home" rel="home" class="site-logo">
+//   <img src="http://irsjobs.dev.dd:8083/sites/default/files/IRS-Logo_1.png" alt="Home">
+// </a>
+// <h1 class="site-name">
+//   <a href="/" title="Home" rel="home"><span>IRS Jobs</span></a>
+// </h1>
+//
+// Styleguide Components.Blocks.Branding
+
+/* Variables */
+
+/* Selectors and Structure */
+h1.site-name,
+h2.site-slogan {
+  @include hide-text();
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+h1.site-name,
+h2.site-slogan,
+.site-logo {
+  @include media($tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the IRS Views feature.
+ */
+
+include_once 'irs_views.features.inc';

@@ -1,0 +1,136 @@
+// Subpage Menu
+//
+// Subpage dropdown navigation.
+//
+// Markup:
+// <nav role="navigation" class="block block--menu-block block--menu-block-3"
+//   style="margin: 2em 0 10em">
+//   <h2 class="block__title">Where We're Located</h2>
+//   <div class="menu-block-wrapper menu-block-3">
+//     <ul class="menu">
+//       <li class="leaf first"><a href="#" class="active">Holtsville, NY</a></li>
+//       <li class="leaf"><a href="#">Memphis, TN</a></li>
+//       <li class="leaf last"><a href="#">Ogden, UT</a></li>
+//     </ul>
+//   </div>
+// </nav>
+//
+// Styleguide Components.Menus.SubpageNav
+
+// Variables
+$border-color: #979797;
+$color-black: #000;
+
+// Subpage Navigation Dropdown Block
+.block--menu-block-1,
+.block--menu-block-3 {
+  font-size: 1rem;
+
+  position: relative;
+
+  .block__title {
+    margin-bottom: 0.5em;
+
+    color: $primary-black;
+    font-size: 2.4em;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+    line-height: 1em;
+  }
+
+  ul.menu {
+    @include unstyled-list;
+
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 1em;
+    border: 1px solid $border-color;
+
+    border-radius: 1em;
+    background: $color-white url(../../images/icons/arrow.png) 98% 2em no-repeat;
+
+    position: absolute;
+    display: block;
+
+    li.leaf {
+      height: 0;
+      overflow: hidden;
+
+      a {
+        padding: 1em;
+        display: block;
+
+        color: $color-black;
+        font-size: 1.2em;
+        font-family: $secondary-font;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-blue;
+        }
+      }
+    }
+
+    li.first {
+      height: auto;
+    }
+
+    li.last {
+      margin-bottom: 0;
+    }
+
+    &.open {
+      height: auto;
+      overflow: hidden;
+
+      li.leaf {
+        height: auto;
+      }
+    }
+  }
+
+  // Separate hover behavior for use only on non-mobile devices
+  @include media(min-width 721px) {
+    ul.menu:hover {
+      height: auto;
+
+      li.leaf {
+        height: auto;
+      }
+    }
+  }
+
+  @include media($tablet) {
+    padding: 4em 2em;
+    background: $primary-white;
+
+    .block__title {
+      font-weight: $font-normal;
+    }
+
+    ul.menu {
+      position: static;
+      background-image: url(../../images/icons/toggle-expand.png);
+
+      &.open {
+        background-image: url(../../images/icons/toggle-collapse.png);
+
+        a.active {
+          color: $primary-blue;
+          background: $primary-white;
+        }
+      }
+
+      li a.default-item {
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// Hide Block Title
+//
+// Hides the element, supoosedly the block title element, text using Bourbon's
+// `hide-text` mixin.
+//
+// Styleguide Mixins.HideBlockTitle
+@mixin hide-block-title {
+  @include hide-text();
+
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}

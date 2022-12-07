@@ -1,0 +1,64 @@
+// Exposed Filter
+//
+// Shared styling for an exposed-filter element.
+//
+// Styleguide Mixins.ExposedFilter
+@mixin exposed-filter {
+  margin-bottom: 4em;
+  border: 1px solid #c4c4c4;
+
+  border-radius: 0.5em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+  inset 0 -2px 0px rgba(0, 0, 0, 0.05);
+  background: $color-white;
+
+  .block__title {
+    margin: 0;
+    padding: 0.75em 1.5em;
+    border-bottom: 1px solid #c4c4c4;
+
+    cursor: pointer;
+    background: url(../../images/icons/toggle-collapse.png) 99% no-repeat;
+
+    color: $primary-black;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: $secondary-font;
+    line-height: 1em;
+    text-transform: uppercase;
+
+    &.collapsed {
+      background-image: url(../../images/icons/toggle-expand.png);
+    }
+  }
+
+  .block__content {
+    margin-top: 1em;
+    padding: 1em 2em;
+  }
+
+  @include media($tablet) {
+    margin: 0;
+    border: 0;
+
+    border-radius: 0;
+    box-shadow: none;
+
+    .block__title {
+      padding: 1.5em;
+      border: 0;
+
+      background-position: 97% center;
+    }
+
+    .block__content {
+      margin: 0;
+      padding: 2em;
+      border-top: 1px solid #c4c4c4;
+
+      .views-exposed-form .views-exposed-widgets .views-exposed-widget {
+        width: 100%;
+      }
+    }
+  }
+}

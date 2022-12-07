@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>*Icon / Chevron / Down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.6813072,16.2640578 C6.04346224,16.8008696 6.85831108,16.8008696 7.22046612,16.2640578 L12.0416551,9.17814183 C12.6075223,8.23335303 12.924408,7.13825692 12.9017733,5.9787434 C12.8112346,2.82228992 10.1403411,0.202648254 6.8130417,0.0093960003 C3.07831784,-0.183856254 0,2.62903766 0,6.12905071 C0,7.24561929 0.31688566,8.27629797 0.860118221,9.17814183 L5.6813072,16.2640578 Z M6.45088666,3.12290454 C8.19375779,3.12290454 9.59710857,4.47567031 9.59710857,6.10757824 C9.59710857,7.76095863 8.19375779,9.09225194 6.45088666,9.09225194 C4.70801553,9.09225194 3.30466474,7.76095863 3.30466474,6.10757824 C3.30466474,4.47567031 4.70801553,3.12290454 6.45088666,3.12290454 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IRS-Student-Page---Annotations" transform="translate(-221.000000, -1299.000000)">
+            <g id="Featured-Job-Card-Copy-7" transform="translate(183.000000, 1267.000000)">
+                <g id="Job-Card" transform="translate(34.000000, 26.000000)">
+                    <g id="Job-Card-Content">
+                        <g id="Job-Info-Item-Copy-7">
+                            <g id="Group-3">
+                                <g id="*-/-Icon-/-Location-Marker" transform="translate(0.000000, 5.000000)">
+                                    <g id="24px">
+                                        <polygon id="Path" points="0 0 21.0825184 0 21.0825184 20 0 20"></polygon>
+                                        <g id="✱-/-Color-/-Light-Blue" transform="translate(4.392191, 1.666667)">
+                                            <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-1"></use>
+                                            </mask>
+                                            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                            <g id="✱-/-Color-/-Dark" mask="url(#mask-2)" fill="#303030">
+                                                <g transform="translate(-7.027506, -4.166667)" id="Rectangle-13">
+                                                    <rect x="0" y="0" width="26.353148" height="25" rx="10"></rect>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

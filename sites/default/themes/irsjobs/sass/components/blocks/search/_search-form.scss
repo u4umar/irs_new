@@ -1,0 +1,68 @@
+// Search Page Search Block
+//
+// Markup:
+// <div role="search" class="block block--search block--search-form--2">
+//   <div class="block__content">
+//     <form class="search-block-form--2" id="search-block-form--2" accept-charset="UTF-8">
+//       <div>
+//         <div class="container-inline">
+//           <h2 class="element-invisible">Search form</h2>
+//           <div class="form-item form-type-textfield form-item-search-block-form">
+//             <label class="element-invisible"
+//                    for="edit-search-block-form--4">Search</label>
+//             <input title="Enter the terms you wish to search for."
+//                    id="edit-search-block-form--4"
+//                    name="search_block_form"
+//                    value=""
+//                    size="15"
+//                    maxlength="128"
+//                    class="form-text"
+//                    type="text">
+//           </div>
+//           <div class="form-actions form-wrapper" id="edit-actions--3">
+//             <input id="edit-submit--5"
+//                    name="op"
+//                    value="Search"
+//                    class="form-submit"
+//                    type="submit">
+//           </div>
+//         </div>
+//       </div>
+//     </form>
+//   </div>
+// </div>
+//
+// Styleguide Components.Blocks.SearchPageSearch
+.block--search-form--2 {
+  font-size: 1rem;
+
+  h2.element-invisible {
+    height: auto;
+    position: relative !important; // Needed to override system stylesheet
+    color: $primary-black;
+    font-family: $primary-font;
+    font-weight: $font-bold;
+  }
+
+  input.form-text {
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 1em;
+    border: 1px solid #c4c4c4;
+
+    border-radius: 0.5em;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.10);
+    display: block;
+  }
+
+  input[type=submit] {
+    display: none;
+  }
+
+  @include media($tablet) {
+    padding: 4em 2em;
+  }
+}

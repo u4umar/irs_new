@@ -1,0 +1,112 @@
+// Admin Tools
+//
+// Drupal rendered tabs for administration.
+//
+// Markup:
+// <div class="block--admin-tools">
+//     <h2 class="">Admin Tools</h2>
+//     <ul class="tabs primary">
+//     <li id="tab-view published"><a href="#">View published</a></li>
+//     <li id="tab-view draft" class="active">
+//       <a href="#/draft" class="active">
+//        View draft
+//        <span class="element-invisible"
+//              style="display: none">(active tab)</span>
+//       </a>
+//     </li>
+//     <li id="tab-edit draft"><a href="#/edit">Edit draft</a></li>
+//     <li id="tab-moderate"><a href="#/moderation">Moderate</a></li>
+//     <li id="tab-node export"><a href="#/node_export">Node export</a></li>
+//     <li id="tab-unpublish"><a href="#/unpublish">Unpublish</a></li>
+//     <li id="tab-devel"><a href="#/devel">Devel</a></li>
+//   </ul>
+// </div>
+//
+// Styleguide Components.Blocks.AdminTools
+.block--admin-tools {
+  @include clearfix;
+
+  margin: 0 0 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+
+  border-radius: 0.25em;
+  background: #eee;
+
+  h2 {
+    @include hide-block-title;
+  }
+
+  ul.tabs {
+    @include unstyled-list;
+
+    float: right;
+    border-bottom: none;
+  }
+
+  ul.tabs li {
+    display: block;
+    float: left;
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a,
+    &.active a {
+      margin: 0;
+      padding: 0.5em 1em;
+      border: 1px solid #999;
+
+      display: block;
+      color: #000;
+      text-transform: uppercase;
+      border-radius: 0.25em;
+    }
+  }
+
+  ul.action-links .add_redirect.first.last {
+    width: 33%;
+    margin: 0 0 0 67%;
+
+    display: block;
+    list-style-type: none;
+
+    a {
+      margin: 0;
+      padding: 0.5em 1em;
+      border: 1px solid #999;
+
+      color: #000;
+      font-size: 11px;
+      text-transform: capitalize;
+      text-decoration: none;
+      text-align: center;
+
+      display: block;
+      border-radius: 0.25em;
+    }
+  }
+
+  ul.tabs li a,
+  ul.tabs li.active a,
+  ul.tabs li#tab-edit a,
+  ul.tabs li#tab-unpublish a,
+  ul.tabs li#tab-publish a,
+  ul.tabs li#tab-webform a,
+  ul.tabs li#tab-results a,
+  ul.tabs li#tab-log a,
+  ul.tabs li#tab-devel a,
+  ul.action-links .add_redirect.first.last a {
+    background: rgb(252, 255, 244);
+    background: -moz-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(252, 255, 244, 1)), color-stop(40%, rgba(223, 229, 215, 1)), color-stop(100%, rgba(179, 190, 173, 1)));
+    background: -webkit-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+    background: -o-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+    background: linear-gradient(to bottom, rgba(252, 255, 244, 1) 0%, rgba(223, 229, 215, 1) 40%, rgba(179, 190, 173, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfff4', endColorstr='#b3bead', GradientType=0);
+  }
+}
+
